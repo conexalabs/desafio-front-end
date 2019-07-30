@@ -1,0 +1,20 @@
+// responsive
+$mobile: 767px;
+$tablet: 768px;
+$desktop: 992px;
+$widscreen: 1200px;
+
+//variables
+$font-size: 20px;
+$font-size-title: 60px;
+$font-size-card: 16px;
+$color: #3a886f;
+$color-secondary: #0e9995;
+$color-placeholder: #a5a3a3;
+$gradient: linear-gradient(
+  90deg,
+  rgba(56, 134, 105, 1) 0%,
+  rgba(69, 154, 158, 1) 100%,
+  rgba(0, 212, 255, 1) 388%,
+  rgba(2, 0, 36, 1) 388%
+);
