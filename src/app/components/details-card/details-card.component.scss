@@ -1,0 +1,36 @@
+@import '../../../styles.scss';
+
+agm-map {
+  height: 100vh;
+}
+
+.card {
+  background-color: white;
+  z-index: 2;
+  padding: 20px;
+  position: absolute;
+  max-width: 350px;
+  top: 0;
+  box-shadow: 6px 9px 10px -4px rgba(0,0,0,0.75);
+  .icon {
+    margin-bottom: 20px;
+    i {
+      font-size: 32px;
+      color: $main-color;
+      cursor: pointer;
+    }
+  }
+  .content-text {
+    color: $main-color;
+    font-size: $text-card-size;
+    p {
+      margin-bottom: 0;
+    }
+    .main-text {
+      font-weight: bold;
+    }
+    .subtitle {
+      margin-bottom: 20px;
+    }
+  }
+}

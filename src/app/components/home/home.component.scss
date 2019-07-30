@@ -1,0 +1,134 @@
+@import '../../../styles.scss';
+
+*:not(.fa) {
+  font-family: $default-font;
+  font-weight: 400;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background: $gradient-default;
+}
+
+.background-white {
+  background-color: #fff;
+}
+
+.title, .search {
+  &-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.title-container {
+  padding: 40px 0;
+  > i {
+    font-size: 48px;
+    color: $main-color;
+  }
+  > p {
+    margin-bottom: 0;
+    margin-left: 25px;
+    font-size: $text-title-size;
+    color: $main-color;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .title-container {
+    padding: 20px 0;
+    justify-content: center;
+    flex-flow: column;
+    > p {
+      margin-bottom: 0;
+      margin-left: 0;
+      font-size: 30px;
+    }
+  }
+}
+.search-container {
+  padding: 0 0 20px;
+  .form-group {
+    align-items: center;
+    > input {
+      font-size: $text-default-size;
+      padding: 25px 20px;
+      width: 340px;
+      transition: .5s;
+      &:focus {
+        color: $main-color;
+        border-color: $rgba-main-color;
+        outline: 0;
+        box-shadow: 0 0 0 1px $rgba-main-color;
+      }
+    }
+    > button {
+      font-size: $text-buttom-size;
+      font-weight: $text-buttom-weight;
+      padding: 0.375rem 2rem;
+      border-radius: 50px;
+      background-color: $main-color;
+      border-color: $main-color;
+      transition: .5s;
+      &:hover {
+        color: $main-color;
+        border-color: $main-color;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  .search-container {
+    padding: 10px 0;
+    .form-group {
+      flex-flow: column;
+      button {
+        margin-left: 0!important;
+        margin-top: 25px!important;
+      }
+    }
+  }
+}
+.results {
+  .wrapper-image {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 180px;
+      height: auto;
+      max-width: 100%;
+      margin-top: 30px;
+    }
+    p {
+      color: #fff;
+      font-size: $text-default-size;
+      margin-top: 15px;
+    }
+  }
+  .wrapper-cards {
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    &.carousel {
+      display: block!important;
+      ::ng-deep {
+        app-card {
+          .wrapper {
+            margin: 0 10px;
+          }
+        } 
+      }
+    }
+    app-card {
+      margin: 10px 0;
+    }
+  }
+}

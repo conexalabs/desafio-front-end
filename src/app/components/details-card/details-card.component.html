@@ -1,0 +1,20 @@
+<agm-map [latitude]="51.678418" [longitude]="7.809007">
+  <agm-marker [latitude]="51.678418" [longitude]="7.809007"></agm-marker>
+</agm-map>
+<div class="card">
+  <div class="icon" (click)="backToRoot()">
+    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+  </div>
+  <div class="content-text">
+    <p class="main-text">{{details.nome}}</p>
+    <p class="subtitle">Razão social</p>
+  </div>
+  <div class="content-text">
+    <p class="main-text">{{details.cnpj}}</p>
+    <p class="subtitle">CNPJ</p>
+  </div>
+  <div class="content-text">
+    <p class="main-text">{{details.logradouro}} {{details.complemento}} {{details.municipio | titlecase }}</p>
+    <p class="subtitle last">Endereço</p>
+  </div>
+</div>

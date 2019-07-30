@@ -1,0 +1,14 @@
+<div class="wrapper" (click)="gotoDetails(details)">
+  <div class="content-text">
+    <p class="main-text">{{company.nome}}</p>
+    <p class="subtitle">Razão social</p>
+  </div>
+  <div class="content-text">
+    <p class="main-text">{{company.cnpj}}</p>
+    <p class="subtitle">CNPJ</p>
+  </div>
+  <div class="content-text">
+    <p class="main-text">{{company.logradouro}} {{company.complemento}} {{company.municipio | titlecase }}</p>
+    <p class="subtitle last">Endereço</p>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+@import '../../../styles.scss';
+
+*:not(.fa) {
+  font-family: $default-font;
+  font-weight: 400;
+}
+
+.wrapper {
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 20px;
+  .content-text {
+    color: $main-color;
+    font-size: $text-card-size;
+    p {
+      margin-bottom: 0;
+    }
+    .main-text {
+      font-weight: bold;
+    }
+    .subtitle:not(.last) {
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="background-white">
+    <div class="title-container">
+      <i class="fa fa-building" aria-hidden="true"></i>
+      <p>Localizador de Empresas</p>
+    </div>
+    <div class="search-container">
+      <div class="form-group row">
+        <input type="text" class="form-control" [(ngModel)]="CNPJ" placeholder="CNPJ..." mask='00.000.000/0000-00'>
+        <button type="button" (click)="triggerSubmit()" class="btn btn-primary my-2 ml-5">LOCALIZAR</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="results">
+      <div *ngIf="companies.length > 0" class="wrapper-cards" [ngClass]="{carousel: companies.length > 4}">
+        <ng-container *ngIf="companies.length > 4">
+          <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="configSlider" >
+            <app-card ngxSlickItem *ngFor="let company2 of companies" [company]="company2"></app-card>
+          </ngx-slick-carousel>
+        </ng-container>
+        <ng-container *ngIf="companies.length <= 4">
+          <app-card *ngFor="let company of companies" [company]="company" class="col-lg-3 col-md-4 col-sm-6 col-xs-12"></app-card>
+        </ng-container>
+      </div>
+      <div class="wrapper-image" *ngIf="companies.length == 0">
+        <img src="../../assets/images/search.png" />
+        <p>Localize acima a primeira empresa</p>
+      </div>
+    </div>
+  </div>
+</div>
