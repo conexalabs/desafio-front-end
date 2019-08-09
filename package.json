@@ -1,0 +1,46 @@
+{
+  "name": "desafio-conexa",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.0",
+    "axios-jsonp": "^1.0.2",
+    "google-maps-react": "^2.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-gradient": "^1.0.2",
+    "react-icons": "^3.7.0",
+    "react-items-carousel": "^2.3.7",
+    "react-loader-spinner": "^3.1.2",
+    "react-media": "^1.9.2",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-window-size": "^1.2.2",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.3.2",
+    "sweetalert": "^2.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
