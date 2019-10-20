@@ -18,5 +18,5 @@ npm run build
 npm run dev
 
 # lint & run all tests
-npm test
+npm run test
 ```
