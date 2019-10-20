@@ -1,0 +1,63 @@
+body{
+  font-size: 20px;
+  font-family: "Roboto";
+  color: #3a8970;
+}
+
+.header{
+  height: 230px;
+}
+
+.row.degrade{
+  background-image: linear-gradient(to right, #388669 , #459A9E);
+  height: calc(100vh - 230px);
+  width: 100vw;
+}
+
+.titulo{
+  font-size: 60px;
+  color: #3a8970;
+  text-align: center;
+  .fa-building{
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+  }
+}
+
+.btn-localizar{
+  background-color: #3a8970;
+  color: white;
+  border-radius: 24px;
+  padding: 8px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.input-localizar{
+  border: 2px solid #3a8970;
+  border-radius: 8px;
+  font-size: 20px;
+  padding: 15px 15px;
+  width: 360px;
+  font-size: 20px;
+  color: #3a8970;
+}
+
+.head{
+  margin-top: 25px;
+}
+
+.content{
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.lista-resultados{
+  margin-top: 100px;
+}
+
+.msg{
+  height: 30px;
+}
