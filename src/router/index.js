@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -13,7 +13,7 @@ import Maps from '@/views/Maps'
 import Search from '@/views/Search'
 import Whapper from '@/views/Whapper'
 
-let router = new Router({
+let router = new VueRouter({
   routes: [
     {
       path: '/',
@@ -43,6 +43,6 @@ let router = new Router({
   ]
 });
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
 export default router;

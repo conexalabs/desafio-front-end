@@ -1,19 +1,19 @@
 <template>
   <div class='row lista-resultados'>
     <div class="col-md">
-      <i v-if="page > 0" @click="prev" class="fas fa-chevron-left"></i>
-      <carousel 
-        :per-page="4" 
-        :navigate-to="page" 
+      <carousel
+        class="companies-list"
         :mouse-drag="false"
         :paginationEnabled="false"
-        :navigateTo="page">
+        :navigationEnabled="true"
+        :navigation-next-label="navigationNext"
+        :navigation-prev-label="navigationPrev"
+        :perPageCustom="[[425, 1], [768, 2], [1024, 3], [1440, 4]]">
         <slide 
           v-for="(item, index) in items"
           v-bind:item="item"
           v-bind:index="index"
-          v-bind:key="index"
-          class="col-sm-3">
+          v-bind:key="index">
           <div class="box" @click="openItem(item)">
             <p>
               <strong>{{item.nome}}</strong><br />
@@ -30,7 +30,6 @@
           </div>
         </slide>
       </carousel>
-      <i v-if="Object.keys(items).length - 4 > page" @click="next" class="fas fa-chevron-right"></i>
     </div>
   </div>
 </template>
@@ -52,6 +51,14 @@
       Carousel,
       Slide 
     },
+    computed:{
+      navigationNext() {
+        return '<i style="color:white; font-size: 25px;" class="fas fa-chevron-right"></i>';
+      },
+      navigationPrev() {
+        return '<i style="color:white; font-size: 25px; margin-left: -45px; !important" class="fas fa-chevron-left"></i>';
+      }
+    },
     methods: {
       openItem(item){
         let cnpj = item.cnpj;
@@ -65,7 +72,7 @@
       },
       prev(){
         this.page = Math.max(0, this.page - 1)
-      }
+      },
     }
   }
 </script>
@@ -76,25 +83,13 @@
     &{
       position: relative;
     }
-    .fa-chevron-right, .fa-chevron-left{
-      color: white;
-      font-size: 45px;
-      position: absolute;
-      top: 130px;
-      cursor: pointer;
-    }
-    .fa-chevron-right{
-      right: -50px;
-    }
-    .fa-chevron-left{
-      left: -50px;
-    }
     .box{
       &{
         background-color: white;
         border-radius: 10px;
         padding: 12px;
         transition: 0.3s;
+        width: 250px;
         height: 320px;
         margin-bottom: 30px;
         cursor: pointer;
@@ -112,4 +107,8 @@
       }
     }
   }
+  @media (min-width: 425px){ .box{ width: 400px !important; }}
+  @media (min-width: 768px){ .box{ width: 320px !important; }}
+  @media (min-width: 1024px){ .box{ width: 280px !important; }}
+  @media (min-width: 1440px){ .box{ width: 250px !important; }}
 </style>

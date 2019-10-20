@@ -2,17 +2,21 @@
 
 Demo: https://localizador-empresas.herokuapp.com
 
-# Instalando os pacotes NPM
-```sh
-$ npm install
-```
+## Introdução
+Aplicação feita em [Vue.js](http://vuejs.org) para localizar empresas através do CNPJ.
 
-# Gerando a versão de produção
-```sh
+### Development Setup
+
+``` bash
+# install deps
+npm install
+
+# build dist files
 npm run build
-```
 
-# Rodando a versão de desenvolvimento com HotReload
-```sh
+# serve examples at localhost:8000
 npm run dev
+
+# lint & run all tests
+npm test
 ```

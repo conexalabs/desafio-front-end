@@ -6,23 +6,15 @@ body{
 
 .header{
   height: 230px;
+  .center{
+    text-align: center;
+  }
 }
 
 .row.degrade{
   background-image: linear-gradient(to right, #388669 , #459A9E);
   height: calc(100vh - 230px);
   width: 100vw;
-}
-
-.titulo{
-  font-size: 60px;
-  color: #3a8970;
-  text-align: center;
-  .fa-building{
-    width: 48px;
-    height: 48px;
-    font-size: 48px;
-  }
 }
 
 .btn-localizar{
@@ -43,6 +35,78 @@ body{
   width: 360px;
   font-size: 20px;
   color: #3a8970;
+}
+
+.titulo{
+  font-size: 60px;
+  color: #3a8970;
+  text-align: center;
+  .fa-building{
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+  }
+}
+
+.msg{
+  text-align: left;
+}
+
+@media (max-width: 576px) {
+  .titulo{
+    font-size: 25px !important;
+    .fa-building{
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+    }
+  }
+  .btn-localizar{
+    display: block;
+    margin: auto;
+  }
+}
+@media (min-width: 576px) {
+  .titulo{
+    font-size: 30px !important;
+    .fa-building{
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+    }
+  }
+  .btn-localizar{
+    display: inline;
+    margin: auto;
+  }
+}
+@media (min-width: 768px) {
+  .titulo{
+    font-size: 40px !important;
+    .fa-building{
+      width: 35px;
+      height: 35px;
+      font-size: 35px;
+    }
+  }
+  .btn-localizar{
+    display: inline;
+    margin: auto;
+  }
+}
+@media (min-width: 992px) {
+  .titulo{
+    font-size: 50px !important;
+    .fa-building{
+      width: 40px;
+      height: 40px;
+      font-size: 40px;
+    }
+  }
+  .btn-localizar{
+    display: inline;
+    margin: auto;
+  }
 }
 
 .head{

@@ -2,14 +2,14 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="container header">
-				<div class="row head">
-					<div class="col-sm">
+				<div class="row">
+					<div class="col-sm center">
 						<h1 class="titulo"><i class="fas fa-building"></i> Localizador de Empresas</h1>
 					</div>
 				</div>
 				<div class="row content">
 					<div class="col col-lg-3"></div>
-					<div class="col-md-auto">
+					<div class="col-md-auto center">
 						<the-mask 
 							class="input-localizar"
 							v-model="keyword" placeholder="CNPJ..."
@@ -25,7 +25,7 @@
 		</div>
 		<div class="row degrade">
 			<div class="container">
-				<Content></Content>
+				<Content />
 			</div>
 		</div>
 	</div>
