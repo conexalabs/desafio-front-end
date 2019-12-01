@@ -1,3 +1,6 @@
+$primary-color: #3a8970;
+$secondary-color: #459A9E;
+
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +22,7 @@ body {
   padding: 40px;
 
   &__title {
-    color: #3a8970;
+    color: $primary-color;
     font-size: 60px;
     font-weight: 400;
   }
@@ -30,8 +33,8 @@ body {
   }
 
   &__cnpj {
-    color: #3a8970 !important;
-    border-color: solid #3a8970 !important;
+    color: $primary-color !important;
+    border-color: solid $primary-color !important;
     border-radius: 5px !important;
     font-size: 20px !important;
     background-color: transparent !important;
@@ -46,23 +49,15 @@ body {
     }
 
     .MuiOutlinedInput {
-      &-cssOutlinedInput {
-        border-color: red;
-      }
-
       &-notchedOutline {
-        border-color: #3a8970;
+        border-color: $primary-color;
         border-width: 2px;
       }
-    }
-    
-    ::placeholder {
-      color: #8a8e8e !important;
     }
   }
 
   &__searchbtn {
-    background: #3a8970 !important;
+    background: $primary-color !important;
     border-radius: 30px !important;
     color: white !important;
     font-weight: 500 !important;
@@ -93,7 +88,7 @@ body {
     min-width: 250px;
     max-width: 250px;
     text-align: left;
-    color: #3a8970 !important;
+    color: $primary-color !important;
 
     h1, span {
       font-size: 16px !important;
@@ -115,7 +110,7 @@ body {
 .footer {
   display: flex;
   width: 100vw;
-  background: linear-gradient(to right, #388669, #459A9E);
+  background: linear-gradient(to right, $primary-color, $secondary-color);
   flex: 1;
   color: white;
   font-size: 20px;
