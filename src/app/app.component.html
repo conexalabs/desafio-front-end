@@ -1,0 +1,37 @@
+<div class="content app-style" role="main">
+    <div class="header-style">
+        <h2>
+            <fa-icon [icon]="faBuilding"></fa-icon>
+            Localizador de Empresas
+        </h2>
+        <div class="acoes-styles">
+            <input class="input-style" type="text" placeholder="CNPJ" [textMask]="{mask: mask}" [(ngModel)]="cnpj">
+            <button class="button-style" mat-button (click)="pesquisar()">
+                Localizar
+            </button>
+        </div>
+        <div class="spinner-style">
+            <mat-spinner *ngIf="loading" diameter="40"></mat-spinner>
+        </div>
+    </div>
+    <div class="content-style">
+        <div *ngIf="isEmpty">
+            <p style="color: #FFF">Localize acima a primeira empresa</p>
+        </div>
+        <div class="teste1">
+            <div *ngFor="let empresa of ArrayEmpresas" class="coluna-style">
+                <mat-card class="card-style" (click)="abrirEmpresa(empresa)">
+                    <p><strong>{{empresa.nome}}</strong></p>
+                    <span>Razão Social</span>
+                    <br>
+                    <p><strong>{{empresa.cnpj}}</strong></p>
+                    <span>CNPJ</span>
+                    <br>
+                    <p><strong>{{empresa.logradouro}} {{empresa.numero}} {{empresa.bairro}}
+                            {{empresa.cidade}}</strong></p>
+                    <span>Endereço</span>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

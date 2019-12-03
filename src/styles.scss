@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './styles/variables';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+button {
+  background-color: $primary !important;
+}
+
+input {
+  font-size: 20px;
+}
+
+p, span{
+  color: $primary;
+  font-size: 16px;
+}
+
+.mat-button-wrapper{
+  color: #FFF !important;
+}
