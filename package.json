@@ -1,6 +1,6 @@
 {
-  "name": "localizador-empresas",
-  "version": "0.0.1",
+  "name": "desafio-front-end",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
-    "@angular/cdk": "^8.2.3",
+    "@angular/cdk": "~8.2.3",
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
     "@angular/core": "~8.2.14",
@@ -26,6 +26,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@tomtom-international/web-sdk-maps": "^5.40.1",
+    "@tomtom-international/web-sdk-services": "^5.40.1",
     "angular2-text-mask": "^9.0.0",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",

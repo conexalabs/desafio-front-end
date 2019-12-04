@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "localizador-empresas": {
+    "desafio-front-end": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/localizador-empresas",
+            "outputPath": "dist/desafio-front-end",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "localizador-empresas:build"
+            "browserTarget": "desafio-front-end:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "localizador-empresas:build:production"
+              "browserTarget": "desafio-front-end:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "localizador-empresas:build"
+            "browserTarget": "desafio-front-end:build"
           }
         },
         "test": {
@@ -117,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "localizador-empresas:serve"
+            "devServerTarget": "desafio-front-end:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "localizador-empresas:serve:production"
+              "devServerTarget": "desafio-front-end:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "localizador-empresas"
+  "defaultProject": "desafio-front-end"
 }
