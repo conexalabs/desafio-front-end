@@ -109,7 +109,7 @@
     fullscreen
     >
       <Map
-      :APIkey="process.env.VUE_APP_MAPS_API"
+      :APIkey="MAPS_API"
       :empresa="empresa"
       @close-maps="closeMaps()"
       />
@@ -135,6 +135,7 @@ export default {
   },
   data: () => {
     return {
+      MAPS_API: process.env.VUE_APP_MAPS_API,
       formIsValid: true,
       cnpj: '',
       empresas: [],
