@@ -1,0 +1,40 @@
+$primary-color: #3a8970;
+
+$title-size: 60px;
+$regular-text-size: 20px;
+$card-text-size: 16px;
+$button-text-size: 20px;
+
+$regular-text-size-mobile: 15px;
+$title-size-mobile: 23px;
+$card-text-size-mobile: 14px;
+$button-text-size-mobile: 12px;
+
+@mixin flex-center-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-center-column {
+    @include flex-center-row;
+    flex-direction: column;
+}
+
+.action-btn {
+    background: $primary-color;
+    border-radius: 25px;
+    padding: .4rem 1.5rem;
+    font-size: $button-text-size;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+@mixin bg-gradient {
+    background: rgb(56,134,105);
+    background: linear-gradient(90deg, rgba(56,134,105,1) 0%, rgba(69,154,158,1) 100%);
+}
+.bold{
+    font-weight: bold;
+}

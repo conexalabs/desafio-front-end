@@ -1,0 +1,65 @@
+<div class="wrapper">
+
+
+    <div class="search-wrapper">
+
+        <div class="title">
+            <i class="fas fa-building"></i>
+            <span>Localizador de Empresas</span>
+        </div>
+
+        <div class="search-input">
+
+            <form [formGroup]="formCnpj">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>CNPJ</mat-label>
+                    <input matInput mask="00.000.000/0000-00" formControlName="cnpj">
+                </mat-form-field>
+
+            </form>
+
+            <button mat-flat-button class="action-btn" (click)="searchCompany()">LOCALIZAR</button>
+
+        </div>
+
+    </div>
+
+    <div class="results-wrapper">
+
+        <div *ngIf="companies.length > 0 && !hasError; else noResults" class="company-results">
+
+            <div *ngFor="let company of companies" class="company-card" [style.marginLeft]="companies.length > 1 ? '2rem' : '0'">
+                <div class="company-info">
+                    <div class="bold">{{company.fantasia | titlecase}}</div>
+                    <span>Nome</span>
+                </div>
+                <div class="company-info">
+                    <div class="bold">{{company.cnpj}}</div>
+                    <span>CNPJ</span>
+                </div>
+                <div class="company-info">
+                    <div class="bold">{{company.logradouro | titlecase}}&nbsp;{{company.bairro | titlecase}}&nbsp;{{company.municipio | titlecase}}-{{company.uf | uppercase}}</div>
+                    <span>Endereço</span>
+                </div>
+
+                <button mat-flat-button class="action-btn" (click)="showMap(company)">VER NO MAPA</button>
+    
+            </div>
+
+        </div>
+
+        <ng-template #noResults>
+
+            <div class="no-results">
+
+                <img src="../../../assets/icons8-search-500.png">
+                <span>Localize acima a primeira empresa</span>
+
+            </div>
+
+        </ng-template>
+
+    </div>
+
+</div>

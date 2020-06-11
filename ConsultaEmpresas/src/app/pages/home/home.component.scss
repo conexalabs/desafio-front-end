@@ -1,0 +1,149 @@
+@import "../../../assets/utils.scss";
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+.search-wrapper {
+    @include flex-center-column;
+    background: #fff;
+    height: 33vh;
+
+    .action-btn {
+        margin-left: 2rem;
+    }
+    mat-form-field {
+        font-size: 16px;
+        width: 350px;
+    }
+}
+
+.results-wrapper {
+    @include flex-center-row;
+    @include bg-gradient;
+    height: 67vh;
+}
+
+.company-results{
+    @include flex-center-row;
+    margin-top: -5rem;
+}
+
+.no-results {
+    @include flex-center-column;
+    margin-top: -5rem;
+    img {
+        height: 250px;
+    }
+    span {
+        font-size: $regular-text-size;
+        font-weight: 300;
+        color: #fff;
+    }
+}
+
+.title,
+.search-input {
+    @include flex-center-row;
+}
+
+.title {
+    color: $primary-color;
+    margin-bottom: 3rem;
+
+    i {
+        font-size: 50px;
+    }
+    span {
+        font-size: $title-size;
+        margin-left: 1rem;
+    }
+}
+
+::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline, .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: $primary-color;
+}
+
+.company-card {
+
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+
+    .company-info{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        color: $primary-color;
+        font-size: $card-text-size;
+    }
+
+    .action-btn{
+        font-size: 15px;
+        width: 100%;
+        margin-top: 1rem;
+        padding: .2rem 0;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .title {
+        margin-bottom: 1.5rem;
+        i {
+            font-size: 30px;
+        }
+        span {
+            font-size: $title-size-mobile;
+            margin-left: 1rem;
+        }
+    }
+
+    .search-wrapper {
+        .action-btn {
+            margin-left: 1rem;
+            font-size: $button-text-size-mobile;
+            padding: .2rem 1.5rem;
+        }
+        mat-form-field {
+            font-size: 14px;
+            width: 100%;
+        }
+    }
+
+    .no-results {
+        margin-top: -4rem;
+        img {
+            height: 200px;
+        }
+        span {
+            font-size: $regular-text-size-mobile;
+        }
+    }
+
+    .company-card {
+
+        padding: 1rem;
+    
+        .company-info{
+            font-size: $card-text-size-mobile;
+        }
+    
+        .action-btn{
+            font-size: 12px;
+            width: 100%;
+            margin-top: 1rem;
+            padding: .2rem 0;
+        }
+    
+    }
+
+
+
+}
