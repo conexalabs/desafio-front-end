@@ -29,6 +29,8 @@
 
     <div class="results-wrapper">
 
+        <ngx-spinner></ngx-spinner>
+        
         <app-carousel 
         *ngIf="companies.length > 0 ; else noResults"
         [companies]="this.companies" 

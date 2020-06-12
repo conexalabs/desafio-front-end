@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,9 +22,10 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MapComponent } from './pages/map/map.component';
 import { CarouselComponent } from './components/carousel/carousel.component'
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -54,8 +55,10 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     DragScrollModule,
     NguCarouselModule,
     MatSnackBarModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    NgxSpinnerModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

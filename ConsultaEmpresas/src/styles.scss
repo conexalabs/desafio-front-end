@@ -43,15 +43,6 @@ body { margin: 0; font-family: 'Roboto', sans-serif; max-width: 100%; }
     }
 }
 
-.warn-snackbar{
-    background: #d6a448;
-    color: #fff;
-
-    button{
-        color: #fff;
-    }
-}
-
 .success-snackbar{
     background: #46ad7a;
     color: #fff;
@@ -61,7 +52,7 @@ body { margin: 0; font-family: 'Roboto', sans-serif; max-width: 100%; }
     }
 }
 
-.delete-snackbar{
+.neutral-snackbar{
     background: #333;
     color: #fff;
 
@@ -112,7 +103,7 @@ body { margin: 0; font-family: 'Roboto', sans-serif; max-width: 100%; }
 
 @media only screen and (max-width: 768px) {
 
-    .error-snackbar, .warn-snackbar, .success-snackbar, .delete-snackbar{
+    .error-snackbar, .warn-snackbar, .success-snackbar, .neutral-snackbar{
         width: 80% !important;
         margin: 10px auto !important;
     }

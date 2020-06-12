@@ -28,6 +28,7 @@
     "ngx-drag-scroll": "^9.0.0-beta.2",
     "ngx-mask": "^9.1.2",
     "ngx-slick-carousel": "^0.5.1",
+    "ngx-spinner": "^9.0.2",
     "rxjs": "~6.5.4",
     "slick-carousel": "^1.8.1",
     "tslib": "^1.10.0",

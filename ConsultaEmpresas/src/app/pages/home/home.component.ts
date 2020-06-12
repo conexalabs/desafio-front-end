@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { DragScrollComponent } from 'ngx-drag-scroll';
 import Utils from 'src/app/utils/cnpjValidator';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-home',
@@ -29,7 +30,9 @@ export class HomeComponent implements OnInit {
     private cnpjService: CnpjService,
     private stateService: StateService,
     private dataService: DataService,
-    private _snackBar: MatSnackBar) {
+    private _snackBar: MatSnackBar,
+    private spinner: NgxSpinnerService
+    ) {
 
       if(localStorage.getItem('cachedCompanies')){
         this.companies = JSON.parse(localStorage.getItem('cachedCompanies'));
@@ -58,19 +61,24 @@ export class HomeComponent implements OnInit {
     }
 
     if(this.companies.find(x => x.cnpj.replace(/[^\d]+/g,'') ===  this.formCnpj.get('cnpj').value)){
-      this.openSnackBar('Esta empresa já foi adicionada!', 'Fechar', 'warn-snackbar')
+      this.openSnackBar('Esta empresa já foi adicionada!', 'Fechar', 'neutral-snackbar')
       return;
     }
 
+    this.spinner.show();
+
     this.cnpjService.getCnpj(this.formCnpj.get('cnpj').value).subscribe(res => {
+      
       this.companies.push(res);
     },
     (err)=>{
       console.log(err);
     },
     ()=>{
+      this.spinner.hide();
       this.openSnackBar('Empresa adicionada!', 'Fechar', 'success-snackbar')
       localStorage.setItem('cachedCompanies', JSON.stringify(this.companies));
+      this.formCnpj.reset();
 
     })
   }
@@ -96,7 +104,7 @@ export class HomeComponent implements OnInit {
       if(element.cnpj == company.cnpj){
         this.companies.splice(index , 1);
         localStorage.setItem('cachedCompanies', JSON.stringify(this.companies));
-        this.openSnackBar('Empresa removida.', 'Fechar', 'delete-snackbar')
+        this.openSnackBar('Empresa removida.', 'Fechar', 'neutral-snackbar')
       }
     });
   }
