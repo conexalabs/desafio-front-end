@@ -1,0 +1,46 @@
+@import "../../../assets/utils.scss";
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+}
+
+.company-card-map{
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-bottom-right-radius: 15px;
+    padding: 2rem 1.5rem 3rem 1.5rem;
+    box-shadow: 0 0 13px 2px rgba($color: #000000, $alpha: .3);
+    width: 230px;
+
+    .company-info{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        color: $primary-color;
+        font-size: $card-text-size;
+    }
+
+    .card-hide{
+        width: 100%;
+        color: #999;
+        @include flex-center-row;
+    }
+}
+
+google-map{
+    z-index: 0;
+}
+
+.back-arrow{
+    color: $primary-color;
+    font-size: 30px;
+    margin-bottom: 1rem;
+    
+    i{
+        cursor: pointer;
+    }
+}

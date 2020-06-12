@@ -17,12 +17,28 @@
         font-size: 16px;
         width: 350px;
     }
+    .row{
+        @include flex-center-row;
+    }
 }
 
 .results-wrapper {
     @include flex-center-row;
     @include bg-gradient;
     height: 67vh;
+    width: 100%;
+
+    mat-card{
+        margin-right: 20px;
+    }
+}
+
+.companies{
+    @include flex-center-row;
+}
+
+.results-wrapper mat-card:last-of-type{
+    margin: 0;
 }
 
 .company-results{
@@ -43,8 +59,22 @@
     }
 }
 
-.title,
-.search-input {
+.search-input{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    mat-hint{
+        color: tomato;
+    }
+
+    .error{
+        
+    }
+}
+
+.title {
     @include flex-center-row;
 }
 
@@ -60,6 +90,16 @@
         margin-left: 1rem;
     }
 }
+.left-arrow, .right-arrow{
+    color: #fff;
+    font-size: 50px;
+}
+.right-arrow{
+    margin-left: 2rem;
+}
+.left-arrow{
+    margin-right: 2rem;
+}
 
 ::ng-deep .mat-form-field-wrapper {
     padding-bottom: 0;
@@ -74,6 +114,9 @@
     background: #fff;
     border-radius: 15px;
     padding: 2rem;
+    min-width: 280px;
+    max-width: 280px;
+    min-height: 250px;
 
     .company-info{
         display: flex;
@@ -81,16 +124,51 @@
         margin-bottom: 1rem;
         color: $primary-color;
         font-size: $card-text-size;
+
     }
 
     .action-btn{
         font-size: 15px;
-        width: 100%;
-        margin-top: 1rem;
+        width: 80%;
         padding: .2rem 0;
+        position: absolute;
+        bottom: 1rem;
+        left: 10%
+    }
+
+    #close{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: rgb(218, 218, 218);
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    #close:hover{
+        color: rgb(156, 156, 156);
     }
 
 }
+.company-results{
+    max-width: 80%;
+    display: flex;
+
+}
+
+app-carousel{
+    width: 70%;
+}
+
+// drag-scroll{
+//     height: 350px;
+//     width: 100%;
+// }
+
+// ::ng-deep .drag-scroll-wrapper, .drag-scroll-container{
+//     height: auto !important;
+//     overflow: hidden !important;
+// }
 
 @media only screen and (max-width: 768px) {
     
@@ -118,7 +196,7 @@
     }
 
     .no-results {
-        margin-top: -4rem;
+        margin-top: -5rem;
         img {
             height: 200px;
         }
@@ -127,6 +205,13 @@
         }
     }
 
+    .company-results{
+        margin-top: -5rem;
+        flex: none;
+        
+    }
+
+    
     .company-card {
 
         padding: 1rem;
@@ -143,7 +228,5 @@
         }
     
     }
-
-
 
 }

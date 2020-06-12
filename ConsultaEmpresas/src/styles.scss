@@ -30,3 +30,29 @@ $ConsultaEmpresas-theme: mat-light-theme($ConsultaEmpresas-primary, $ConsultaEmp
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; max-width: 100%; }
+
+.error-snackbar{
+    background: #bb5c5c;
+    color: #fff;
+    button{
+        color: #fff;
+    }
+}
+
+.warn-snackbar{
+    background: #d6a448;
+    color: #fff;
+
+    button{
+        color: #fff;
+    }
+}
+
+.success-snackbar{
+    background: #46ad7a;
+    color: #fff;
+
+    button{
+        color: #fff;
+    }
+}

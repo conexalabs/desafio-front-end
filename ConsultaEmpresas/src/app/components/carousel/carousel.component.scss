@@ -1,0 +1,68 @@
+@import '../../../assets/utils.scss';
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.scroll{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    display: flex;    
+    min-width: 800px;
+
+    mat-card{
+        margin-right: 20px;
+    }
+}
+
+.scroll mat-card:last-of-type{
+
+    margin: 0;
+}
+
+i{
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+.right{
+    margin-left: 2rem;
+    
+}
+.left{
+    margin-right: 2rem;
+}
+
+.company-card {
+
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    min-width: 280px;
+    min-height: 250px;
+
+    .company-info{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        color: $primary-color;
+        font-size: $card-text-size;
+
+
+    }
+
+    .action-btn{
+        font-size: 15px;
+        width: 80%;
+        padding: .2rem 0;
+        position: absolute;
+        bottom: 1rem;
+        left: 10%
+    }
+
+}

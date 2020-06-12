@@ -1,0 +1,39 @@
+<div class="wrapper">
+
+    <div class="left" (click)="left()"><i class="fas fa-chevron-left"></i></div>
+
+    <div class="scroll" #carousel>
+
+
+        <mat-card *ngFor="let company of companies; let i = index" class="company-card">
+                            
+                <mat-card-content>
+                    <div class="company-info">
+                        <span class="bold">{{company?.nome | titlecase}}</span>
+                        <span>Nome</span>
+                    </div>
+                    <div class="company-info">
+                        <span class="bold">{{company?.cnpj}}</span>
+                        <span>CNPJ</span>
+                    </div>
+                    <div class="company-info">
+                        <span class="bold">{{company?.logradouro | titlecase}}&nbsp;{{company?.bairro | titlecase}}&nbsp;{{company?.municipio | titlecase}}-{{company?.uf | uppercase}}</span>
+                        <span>Endereço</span>
+                    </div>
+                </mat-card-content>
+                
+                <mat-card-actions>
+                    <button mat-flat-button class="action-btn" (click)="onShowMap(company)">VER NO MAPA</button>
+                </mat-card-actions>
+
+            </mat-card>
+
+
+
+    </div>
+
+    <div class="right" (click)="right()"><i class="fas fa-chevron-right"></i></div>
+
+
+    
+</div>

@@ -10,44 +10,97 @@
 
         <div class="search-input">
 
-            <form [formGroup]="formCnpj">
+            <div class="row">
 
-                <mat-form-field appearance="outline">
-                    <mat-label>CNPJ</mat-label>
-                    <input matInput mask="00.000.000/0000-00" formControlName="cnpj">
-                </mat-form-field>
+                <form [formGroup]="formCnpj">
+                        <mat-form-field appearance="outline">
+                            <mat-label>CNPJ</mat-label>
+                            <input matInput mask="00.000.000/0000-00" formControlName="cnpj">
+                        </mat-form-field>
+                </form>
 
-            </form>
+                <button mat-flat-button class="action-btn" (click)="searchCompany()">LOCALIZAR</button>
 
-            <button mat-flat-button class="action-btn" (click)="searchCompany()">LOCALIZAR</button>
+            </div>
 
         </div>
+
+
 
     </div>
 
     <div class="results-wrapper">
 
-        <div *ngIf="companies.length > 0 && !hasError; else noResults" class="company-results">
+        <div class="companies" *ngIf="companies.length > 0; else noResults">
 
-            <div *ngFor="let company of companies" class="company-card" [style.marginLeft]="companies.length > 1 ? '2rem' : '0'">
-                <div class="company-info">
-                    <div class="bold">{{company.fantasia | titlecase}}</div>
-                    <span>Nome</span>
-                </div>
-                <div class="company-info">
-                    <div class="bold">{{company.cnpj}}</div>
-                    <span>CNPJ</span>
-                </div>
-                <div class="company-info">
-                    <div class="bold">{{company.logradouro | titlecase}}&nbsp;{{company.bairro | titlecase}}&nbsp;{{company.municipio | titlecase}}-{{company.uf | uppercase}}</div>
-                    <span>Endereço</span>
-                </div>
+                <div *ngIf="showArrows()" (click)="moveLeft()" class="left-arrow"><i class="fas fa-chevron-left"></i></div>
 
-                <button mat-flat-button class="action-btn" (click)="showMap(company)">VER NO MAPA</button>
-    
-            </div>
+                <mat-card *ngFor="let company of companies; let i = index" class="company-card scale-in-center">
 
+                    <div (click)="deleteCompany(company)" id="close">&times;</div>
+
+                    <mat-card-content>
+                        <div class="company-info">
+                            <span class="bold">{{company?.nome | titlecase}}</span>
+                            <span>Nome</span>
+                        </div>
+                        <div class="company-info">
+                            <span class="bold">{{company?.cnpj}}</span>
+                            <span>CNPJ</span>
+                        </div>
+                        <div class="company-info">
+                            <span
+                                class="bold">{{company?.logradouro | titlecase}}&nbsp;{{company?.bairro | titlecase}}&nbsp;{{company?.municipio | titlecase}}-{{company?.uf | uppercase}}</span>
+                            <span>Endereço</span>
+                        </div>
+                    </mat-card-content>
+
+                    <mat-card-actions>
+                        <button mat-flat-button class="action-btn" (click)="showMap(company)">VER NO MAPA</button>
+                    </mat-card-actions>
+
+                </mat-card>
+
+                <div *ngIf="showArrows()" (click)="moveRight()" class="right-arrow"><i class="fas fa-chevron-right"></i></div>
         </div>
+
+
+        <!-- <app-carousel [companies]="this.companies"></app-carousel> -->
+
+        <!-- <div  *ngIf="showArrows()" (click)="moveLeft()" class="left-arrow"><i class="fas fa-chevron-left"></i></div>
+      
+        <drag-scroll 
+        #nav
+        [scrollbar-hidden]="true"
+        *ngIf="companies.length > 0 && !hasError; else noResults" 
+        class="company-results" >
+
+                <mat-card  drag-scroll-item  [drag-disabled]="true" *ngFor="let company of companies; let i = index" class="company-card" [ngClass]="{'margin-left': !isMobile && i != 0}">
+                
+                    <mat-card-content >
+                        <div class="company-info">
+                            <span class="bold">{{company?.nome | titlecase}}</span>
+                            <span>Nome</span>
+                        </div>
+                        <div class="company-info">
+                            <span class="bold">{{company?.cnpj}}</span>
+                            <span>CNPJ</span>
+                        </div>
+                        <div class="company-info">
+                            <span class="bold">{{company?.logradouro | titlecase}}&nbsp;{{company?.bairro | titlecase}}&nbsp;{{company?.municipio | titlecase}}-{{company?.uf | uppercase}}</span>
+                            <span>Endereço</span>
+                        </div>
+                    </mat-card-content>
+                    
+                    <mat-card-actions>
+                        <button mat-flat-button class="action-btn" (click)="showMap(company)">VER NO MAPA</button>
+                    </mat-card-actions>
+    
+                </mat-card>
+    
+        </drag-scroll>
+
+        <div *ngIf="showArrows()" (click)="moveRight()" class="right-arrow"><i class="fas fa-chevron-right"></i></div> -->
 
         <ng-template #noResults>
 

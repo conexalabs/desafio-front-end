@@ -1,0 +1,44 @@
+<div class="wrapper">
+
+
+    <div class="company-card-map">
+
+        <div routerLink="" class="back-arrow"><i class="fas fa-arrow-circle-left"></i></div>
+
+        <div class="company-info">
+            <div class="bold">{{company?.nome | titlecase}}</div>
+            <span>Nome</span>
+        </div>
+        <div class="company-info">
+            <div class="bold">{{company?.cnpj}}</div>
+            <span>CNPJ</span>
+        </div>
+        <div class="company-info">
+            <div class="bold">
+                {{company?.logradouro | titlecase}}&nbsp;{{company?.municipio | titlecase}}-{{company?.uf | uppercase}}
+            </div>
+            <span>Endereço</span>
+        </div>
+
+        <div class="card-hide">
+            <i class="fas fa-minus"></i>
+        </div>
+
+    </div>
+
+    <google-map 
+        height="100%" 
+        width="100%"
+        [center]="center"
+    >
+
+        <map-marker 
+            [position]="marker.position" 
+            [label]="marker.label"
+            [title]="marker.title" 
+            [options]="marker.options">
+        </map-marker>
+
+
+    </google-map>
+</div>

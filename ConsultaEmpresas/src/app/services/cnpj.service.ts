@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CnpjService {
 
-
   constructor(private http: HttpClient) { }
 
   getCnpj(cnpj: string){
