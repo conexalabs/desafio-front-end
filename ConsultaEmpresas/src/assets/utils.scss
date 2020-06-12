@@ -21,6 +21,11 @@ $button-text-size-mobile: 12px;
     flex-direction: column;
 }
 
+@mixin bg-gradient {
+    background: rgb(56,134,105);
+    background: linear-gradient(90deg, rgba(56,134,105,1) 0%, rgba(69,154,158,1) 100%);
+}
+
 .action-btn {
     background: $primary-color;
     border-radius: 25px;
@@ -31,10 +36,6 @@ $button-text-size-mobile: 12px;
     text-transform: uppercase;
 }
 
-@mixin bg-gradient {
-    background: rgb(56,134,105);
-    background: linear-gradient(90deg, rgba(56,134,105,1) 0%, rgba(69,154,158,1) 100%);
-}
 .bold{
     font-weight: bold;
 }

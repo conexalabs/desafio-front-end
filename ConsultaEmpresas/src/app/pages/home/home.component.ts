@@ -4,8 +4,7 @@ import { CnpjService } from 'src/app/services/cnpj.service';
 import { StateService } from 'src/app/services/state.service';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
-import { DragScrollComponent } from 'ngx-drag-scroll';
-import Utils from 'src/app/utils/cnpjValidator';
+import Utils from 'src/app/utils/utils';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgxSpinnerService } from "ngx-spinner";
 
@@ -18,11 +17,8 @@ export class HomeComponent implements OnInit {
 
   companies: any[] = [];
   formCnpj: FormGroup;
-  hasError: boolean = false;
   errorMessage: string;
   isMobile: boolean;
-  @ViewChild('nav', {read: DragScrollComponent}) ds: DragScrollComponent;
-
 
   constructor(
     private router: Router,
@@ -92,11 +88,11 @@ export class HomeComponent implements OnInit {
     }
     return false;
   }
-
+ 
   showMap(company: any){
-    const _cnpj = company.cnpj.replace(/[^\d]+/g,'');
+    const id = Utils.uuidv4();
     this.dataService.setClickedCompany(company);
-    this.router.navigate([`map/${_cnpj}`]);
+    this.router.navigate([`map/${id}`]);
   }
 
   deleteCompany(company){
@@ -111,7 +107,7 @@ export class HomeComponent implements OnInit {
 
   openSnackBar(message: string, action: string, snackBarClass: string) {
     this._snackBar.open(message, action, {
-      duration: 2000,
+      duration: 1500,
       panelClass: [snackBarClass]
     });
   }
