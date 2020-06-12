@@ -69,6 +69,9 @@ export class HomeComponent implements OnInit {
     },
     (err)=>{
       console.log(err);
+      this.spinner.hide();
+      this.openSnackBar('Calma! Too many requests.', 'Fechar', 'error-snackbar')
+
     },
     ()=>{
       this.spinner.hide();
