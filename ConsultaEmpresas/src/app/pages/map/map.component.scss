@@ -6,7 +6,7 @@
 }
 
 .company-card-map{
-    z-index: 99;
+    z-index: 1;
     position: absolute;
     top: 0;
     left: 0;
@@ -43,4 +43,20 @@ google-map{
     i{
         cursor: pointer;
     }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+   .company-card-map{
+       width: 40%;
+       padding-bottom: 1rem !important;
+       padding-top: 1rem !important;
+   }
+
+   .company-info{
+    font-size: 13px !important;
+    margin-bottom: .5rem !important;
+}
+    
 }

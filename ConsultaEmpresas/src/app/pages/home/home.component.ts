@@ -85,14 +85,6 @@ export class HomeComponent implements OnInit {
     return false;
   }
 
-  moveLeft() { 
-   
-  }
-
-  moveRight() {
-  }
-
-
   showMap(company: any){
     const _cnpj = company.cnpj.replace(/[^\d]+/g,'');
     this.dataService.setClickedCompany(company);
@@ -104,6 +96,7 @@ export class HomeComponent implements OnInit {
       if(element.cnpj == company.cnpj){
         this.companies.splice(index , 1);
         localStorage.setItem('cachedCompanies', JSON.stringify(this.companies));
+        this.openSnackBar('Empresa removida.', 'Fechar', 'delete-snackbar')
       }
     });
   }

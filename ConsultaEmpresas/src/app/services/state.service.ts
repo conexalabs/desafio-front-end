@@ -8,6 +8,7 @@ import { fromEvent, Observable, Subscription } from "rxjs";
 export class StateService {
 
   isMobile = new BehaviorSubject(window.innerWidth <= 768 ? true : false);
+  screenWidth = new BehaviorSubject(window.innerWidth);
 
   resizeObservable$: Observable<Event> = fromEvent(window, 'resize');
   resizeSubscription$: Subscription
@@ -25,6 +26,9 @@ export class StateService {
     else{
       this.isMobile.next(false);
     }
+
+    window.location.reload();
+
   }
 
 

@@ -1,12 +1,17 @@
-<div class="wrapper">
 
-    <div class="left" (click)="left()"><i class="fas fa-chevron-left"></i></div>
+ <ngx-slick-carousel class="carousel" 
+    #slickModal="slick-carousel" 
+    [config]="slideConfig" 
+    (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)"
+    (afterChange)="afterChange($event)"
+    (beforeChange)="beforeChange($event)">
 
-    <div class="scroll" #carousel>
 
+            <mat-card ngxSlickItem *ngFor="let company of companies; let i = index" class="company-card slide scale-in-center">
+                        
+                <div id="close" (click)="onDeleteCompany(company)">&times;</div>
 
-        <mat-card *ngFor="let company of companies; let i = index" class="company-card">
-                            
                 <mat-card-content>
                     <div class="company-info">
                         <span class="bold">{{company?.nome | titlecase}}</span>
@@ -29,11 +34,6 @@
             </mat-card>
 
 
-
-    </div>
-
-    <div class="right" (click)="right()"><i class="fas fa-chevron-right"></i></div>
+</ngx-slick-carousel>
 
 
-    
-</div>

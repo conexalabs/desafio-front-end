@@ -9,4 +9,6 @@ import { NguCarouselConfig } from '@ngu/carousel';
 export class TestComponent {
 
   constructor(){}
+
+  
 }

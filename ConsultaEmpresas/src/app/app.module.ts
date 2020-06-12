@@ -24,6 +24,8 @@ import { MapComponent } from './pages/map/map.component';
 import { CarouselComponent } from './components/carousel/carousel.component'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -51,7 +53,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     ScrollingModule,
     DragScrollModule,
     NguCarouselModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

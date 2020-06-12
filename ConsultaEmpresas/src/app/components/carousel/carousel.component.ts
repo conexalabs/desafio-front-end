@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-carousel',
@@ -11,23 +12,71 @@ export class CarouselComponent implements OnInit {
 
   @Input() companies: any[] = [];
   @Output() showMap = new EventEmitter;
+  @Output() deleteCompany = new EventEmitter;
 
-  constructor() { }
+  isMobile: boolean;
+  resolutionWidth: number;
 
-  ngOnInit(): void {
+  slideConfig = {
+    "slidesToShow": this.manageSlidesToShow(), 
+    "slidesToScroll": 1,
+    "arrows": true,
+    "infinite": false,
+  };
+
+  constructor(private stateService: StateService) { 
+    this.stateService.isMobile.subscribe(res => {
+      this.isMobile = res;
+    })
+
+      this.stateService.screenWidth.subscribe(res =>{
+        this.resolutionWidth = res;
+      })
+
   }
 
-  right(){
-    this.widgetsContent.nativeElement.scrollLeft += 325;
+  ngOnInit(): void {}
 
-  }
+  manageSlidesToShow(){
 
-  left(){
-    this.widgetsContent.nativeElement.scrollLeft -= 325;
+    if(window.innerWidth <= 768){
+      return 1;
+    }
+
+    if(window.innerWidth < 1441){
+      return 2;
+    }
+
+    if(window.innerWidth > 1921){
+      return 4
+    }
+
+
+    return 3;
+
   }
   
-  onShowMap(company){
-    this.showMap.emit(company);
+  slickInit(e) {
+    console.log('slick initialized');
+  }
+  
+  breakpoint(e) {
+    console.log('breakpoint');
+  }
+  
+  afterChange(e) {
+    console.log('afterChange');
+  }
+  
+  beforeChange(e) {
+    console.log('beforeChange');
+  }
+  
+  onShowMap(value){
+    this.showMap.emit(value);
+  }
+  onDeleteCompany(value){
+    this.deleteCompany.emit(value);
   }
 
 }

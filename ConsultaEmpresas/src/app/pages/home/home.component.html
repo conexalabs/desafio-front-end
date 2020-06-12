@@ -15,7 +15,7 @@
                 <form [formGroup]="formCnpj">
                         <mat-form-field appearance="outline">
                             <mat-label>CNPJ</mat-label>
-                            <input matInput mask="00.000.000/0000-00" formControlName="cnpj">
+                            <input type="search" matInput mask="00.000.000/0000-00" formControlName="cnpj">
                         </mat-form-field>
                 </form>
 
@@ -25,83 +25,17 @@
 
         </div>
 
-
-
     </div>
 
     <div class="results-wrapper">
 
-        <div class="companies" *ngIf="companies.length > 0; else noResults">
-
-                <div *ngIf="showArrows()" (click)="moveLeft()" class="left-arrow"><i class="fas fa-chevron-left"></i></div>
-
-                <mat-card *ngFor="let company of companies; let i = index" class="company-card scale-in-center">
-
-                    <div (click)="deleteCompany(company)" id="close">&times;</div>
-
-                    <mat-card-content>
-                        <div class="company-info">
-                            <span class="bold">{{company?.nome | titlecase}}</span>
-                            <span>Nome</span>
-                        </div>
-                        <div class="company-info">
-                            <span class="bold">{{company?.cnpj}}</span>
-                            <span>CNPJ</span>
-                        </div>
-                        <div class="company-info">
-                            <span
-                                class="bold">{{company?.logradouro | titlecase}}&nbsp;{{company?.bairro | titlecase}}&nbsp;{{company?.municipio | titlecase}}-{{company?.uf | uppercase}}</span>
-                            <span>Endereço</span>
-                        </div>
-                    </mat-card-content>
-
-                    <mat-card-actions>
-                        <button mat-flat-button class="action-btn" (click)="showMap(company)">VER NO MAPA</button>
-                    </mat-card-actions>
-
-                </mat-card>
-
-                <div *ngIf="showArrows()" (click)="moveRight()" class="right-arrow"><i class="fas fa-chevron-right"></i></div>
-        </div>
-
-
-        <!-- <app-carousel [companies]="this.companies"></app-carousel> -->
-
-        <!-- <div  *ngIf="showArrows()" (click)="moveLeft()" class="left-arrow"><i class="fas fa-chevron-left"></i></div>
-      
-        <drag-scroll 
-        #nav
-        [scrollbar-hidden]="true"
-        *ngIf="companies.length > 0 && !hasError; else noResults" 
-        class="company-results" >
-
-                <mat-card  drag-scroll-item  [drag-disabled]="true" *ngFor="let company of companies; let i = index" class="company-card" [ngClass]="{'margin-left': !isMobile && i != 0}">
-                
-                    <mat-card-content >
-                        <div class="company-info">
-                            <span class="bold">{{company?.nome | titlecase}}</span>
-                            <span>Nome</span>
-                        </div>
-                        <div class="company-info">
-                            <span class="bold">{{company?.cnpj}}</span>
-                            <span>CNPJ</span>
-                        </div>
-                        <div class="company-info">
-                            <span class="bold">{{company?.logradouro | titlecase}}&nbsp;{{company?.bairro | titlecase}}&nbsp;{{company?.municipio | titlecase}}-{{company?.uf | uppercase}}</span>
-                            <span>Endereço</span>
-                        </div>
-                    </mat-card-content>
-                    
-                    <mat-card-actions>
-                        <button mat-flat-button class="action-btn" (click)="showMap(company)">VER NO MAPA</button>
-                    </mat-card-actions>
+        <app-carousel 
+        *ngIf="companies.length > 0 ; else noResults"
+        [companies]="this.companies" 
+        (showMap)="showMap($event)"
+        (deleteCompany)="deleteCompany($event)"
+        ></app-carousel>
     
-                </mat-card>
-    
-        </drag-scroll>
-
-        <div *ngIf="showArrows()" (click)="moveRight()" class="right-arrow"><i class="fas fa-chevron-right"></i></div> -->
-
         <ng-template #noResults>
 
             <div class="no-results">

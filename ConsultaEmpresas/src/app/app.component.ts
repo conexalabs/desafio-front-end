@@ -8,4 +8,6 @@ import { StateService } from './services/state.service';
 })
 export class AppComponent {
   title = 'ConsultaEmpresas';  
+
+  
 }
