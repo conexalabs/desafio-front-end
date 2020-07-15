@@ -1,0 +1,23 @@
+@import 'src/_variables';
+
+.mapa {
+  height: $max-height;
+
+  .MuiPaper-root {
+    position: absolute;
+    z-index: 1;
+    padding: 20px 20px 60px 20px;
+    height: 375px;
+    border-radius: 0 0 12px 0!important;
+    box-shadow: $box-shadow-card;
+
+    svg {
+      font-size: 32px;
+      color: $primary-color;
+    }
+
+    .MuiIconButton-root {
+      transform: translate(-19%, -4%);
+    }
+  }
+}
