@@ -16,10 +16,10 @@ de tipo que são identificados pela extensão ``` .d.ts ``` e servem como um "gu
 tipo de arquivo customizado ela está lidando e assim facilite que o Lint descubra esses arquivos tornando o código mais organizado
 e livre de importações desnecessárias.
 
-### Material UI Library
+### Material UI Library e Pre-processador Sass
 A material ui library também foi utilizada nesse projeto, porém para conseguir atingir o resultado esperado e tornar o aplicativo
 o mais fidedigno possível ao Style Guide foi utilizado o pre-processador de Css Sass o que torna os arquivos do tipo stylesheet muito
-mais organizados, legiveis e oferece ferramentas poderoas na hora de estilizar os componentes em tela.
+mais organizados, legiveis e oferece ferramentas poderosas na hora de estilizar os componentes em tela.
 
 ### React hooks e encriptação hexadecimal
 Além disso, para tornar a função de armazenamento em local storage a mais robusta, completa e segura possível foi utilizado um método
