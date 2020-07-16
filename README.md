@@ -48,8 +48,8 @@ Link de acesso ao projeto Hosteado: https://localizador-de-empresas-cabae.web.ap
     * components-Componentes React
     * contexts-Contextos React
     * hooks-Hooks React
-    *pages-Páginas do projeto
-    *utils-Funções lógicas utilizadas no projeto
+    * pages-Páginas do projeto
+    * utils-Funções lógicas utilizadas no projeto
     * _variables.scss-Pasta exclusiva para variáveis .scss
     * 404.html
     * App.tsx
