@@ -121,3 +121,17 @@
 .MuiToolbar-root {
   flex-direction: column;
 }
+
+.first {
+  position: absolute;
+  top: 61%;
+  left: 43%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+
+  svg {
+    font-size: 48px;
+  }
+}

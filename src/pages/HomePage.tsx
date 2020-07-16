@@ -2,7 +2,7 @@ import React, { useContext, useCallback } from 'react'
 import { Paper, Toolbar, Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBan } from '@fortawesome/free-solid-svg-icons';
+import { faBan, faSearchPlus } from '@fortawesome/free-solid-svg-icons';
 import Slider from "react-slick";
 import ArrowBackIosSharpIcon from '@material-ui/icons/ArrowBackIosSharp';
 import ArrowForwardIosSharpIcon from '@material-ui/icons/ArrowForwardIosSharp';
@@ -89,7 +89,8 @@ const HomePage = () => {
   return (
     <section className="container-home">
       <TitleBar />
-      <Slider className="carousel" {...settings}>
+
+      {empresas.length > 0 && (<Slider className="carousel" {...settings}>
         {empresas && empresas.map((empresa) => (
           <Paper variant="outlined" elevation={3} key={empresa.cnpj} onClick={() => coordenadas(empresa)}>
             <article className="razao-social">
@@ -108,7 +109,15 @@ const HomePage = () => {
             </article>
           </Paper>
         ))}
-      </Slider>;
+      </Slider>)}
+
+      {empresas.length === 0 && (
+        <div className="first">
+          <FontAwesomeIcon icon={faSearchPlus} />
+          <p>Localize acima a primeira empresa</p>
+        </div>
+      )}
+
 
       {empresas.length >= 4 && (
         <Toolbar>
