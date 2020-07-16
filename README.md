@@ -37,6 +37,7 @@ e robusto no que tange a realização e manuseio de requisições RESTful.
 ### Firebase Hosting
 Para a hospedagem do projeto foi utilizado o sistema de hosting da Firebase o que tornou prático e rápido a configuração e deploy
 do projeto em uma plataforma pública web.
+Link de acesso ao projeto Hosteado: https://localizador-de-empresas-cabae.web.app/home
 
 ## Estrutura de pastas do Localizador de Empresas
 + Conexa-Labs
