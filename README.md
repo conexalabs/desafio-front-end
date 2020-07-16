@@ -69,3 +69,9 @@ Link de acesso ao projeto Hosteado: https://localizador-de-empresas-cabae.web.ap
   - tsconfig.json-Arquivo de configuração do TypeScript
   - yarn.lock
   - yarn-error.log
+
+## Como executar o projeto?
+1. Clone ou baixe esse repositório
+2. Abra seu CLI favorito
+3. Execute o comando ``` yarn ``` ou ``` npm i ```(yarn é mais rápido ;) )
+4. Execute o comando ``` yarn start ``` 
