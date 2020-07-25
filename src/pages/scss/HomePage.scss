@@ -12,6 +12,7 @@
     top: 50%;
     left: 50%;
     position: sticky;
+    margin-bottom: 4vh;
   }
 }
 
@@ -60,25 +61,25 @@
 }
 
 .slick-prev {
-  left: -60px;
+  left: -8%;
   font-size: $titulo-regular!important;
 }
 
 .slick-next {
-  right: -88px;
+  right: -8%;
   font-size: $titulo-regular!important;
 }
 
 .slick-slider {
   margin-top: 10vh;
-  margin-right: 189px;
-  margin-left: 175px;
+  margin-right: 9%;
+  margin-left: 9.28%;
 }
 
 .slick-slide {
   border-radius: 20px;
   box-sizing: border-box;
-  padding: 36px;
+  padding: 11px;
 }
 
 .MuiPaper-rounded {
@@ -133,5 +134,115 @@
 
   svg {
     font-size: 48px;
+  }
+}
+
+@media (max-width: 1440px) and (min-width: 1280px){
+  .searchBar {
+  
+    h1 {
+      transform: translate(-34%,-23%);
+
+    }
+  }
+
+  .slick-slider {
+    margin-top: 10vh;
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  
+  .searchLayout {
+    position: absolute;
+    top: 90%;
+    left: 29%;
+  }
+}
+
+@media (max-width: 1280px) and (min-width: 769px) {
+  .slick-slider {
+    margin-top: 10vh;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .slick-next {
+    right: -5%;
+  }
+
+  .slick-prev {
+    left: -5%;
+  }
+
+  .searchBar {
+  
+    h1 {
+      transform: translate(-25%,-20%);
+    }
+  }
+
+  .searchLayout {
+    position: absolute;
+    top: 90%;
+    left: 24%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-home {
+    
+    .slick-slider {
+      margin-top: 0;
+      margin-right: 0; 
+      margin-left: 0; 
+
+      .slick-slide {
+        padding: 3.5vh;
+      }
+
+      .slick-next, .slick-prev {
+        display: none;
+      }
+    }
+
+    .first {
+      top: 56%;
+      left: 17%;
+    }
+  }
+
+  .searchBar {
+    height: 30vh;
+
+    h1 {
+      font-size: 27px;
+      transform: translate(0%, 0%);
+      top: 0%;
+      left: 0%;
+      margin-bottom: 2vh;
+    }
+  }
+
+  .searchLayout {
+    flex-direction: column;
+
+    Button {
+      width: 92vw;
+      height: 7vh;
+      margin-left: 0;
+
+      span {
+        font-size: 16px;
+      }
+    }
+
+    input {
+      margin-bottom: 3vh;
+      padding: 5px 70px 5px 16px;
+    }
+
+    .MuiButton-root:hover {
+      background-color: #ccc; 
+    }
   }
 }

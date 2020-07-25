@@ -41,6 +41,7 @@ const TitleBar = () => {
         <div className="searchLayout">
           <MaskedInput
             id="outlined-basic"
+            type="tel"
             mask={[/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/]}
             onChange={(e) => valida(e.target.value)}
             placeholder="CNPJ..."

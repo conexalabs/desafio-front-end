@@ -23,12 +23,12 @@ const HomePage = () => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1500,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
@@ -90,26 +90,27 @@ const HomePage = () => {
     <section className="container-home">
       <TitleBar />
 
-      {empresas.length > 0 && (<Slider className="carousel" {...settings}>
-        {empresas && empresas.map((empresa) => (
-          <Paper variant="outlined" elevation={3} key={empresa.cnpj} onClick={() => coordenadas(empresa)}>
-            <article className="razao-social">
-              <h2>{empresa.nome.toLowerCase()}</h2>
-              <p>Razão Social</p>
-            </article>
+      {empresas.length > 0 && (
+        <Slider className="carousel" {...settings}>
+          {empresas && empresas.map((empresa) => (
+            <Paper variant="outlined" elevation={3} key={empresa.cnpj} onClick={() => coordenadas(empresa)}>
+              <article className="razao-social">
+                <h2>{empresa.nome.toLowerCase()}</h2>
+                <p>Razão Social</p>
+              </article>
 
-            <article className="cnpj">
-              <h2>{empresa.cnpj}</h2>
-              <p>CNPJ</p>
-            </article>
+              <article className="cnpj">
+                <h2>{empresa.cnpj}</h2>
+                <p>CNPJ</p>
+              </article>
 
-            <article className="endereco">
-              <h2>{empresa.logradouro.toLowerCase()} {empresa.numero.toLowerCase()} {empresa.bairro.toLowerCase()} {empresa.municipio.toLowerCase()}</h2>
-              <p>Endereço</p>
-            </article>
-          </Paper>
-        ))}
-      </Slider>)}
+              <article className="endereco">
+                <h2>{empresa.logradouro.toLowerCase()} {empresa.numero.toLowerCase()} {empresa.bairro.toLowerCase()} {empresa.municipio.toLowerCase()}</h2>
+                <p>Endereço</p>
+              </article>
+            </Paper>
+          ))}
+        </Slider>)}
 
       {empresas.length === 0 && (
         <div className="first">
