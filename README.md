@@ -3,7 +3,7 @@
 O localizador de empresas é uma aplicação feita utilizando o framework do Facebook React.js, a Material UI library 
 da Google e hospedado no Firebase. Basicamente, é realizada uma requisição RESTful(via axios) a partir do cnpj fornecido,
 que recupera da api receitaws.com.br a razão social e o endereço da empresa consultada, esse endereço então é passado pela 
-API de geocoding(o ato de transformar uma string de endereço em um par de coordenadas no mapa), também da Google, e disso é 
+API de geocoding(o ato de transformar uma string de endereço em um par de coordenadas), também da Google, e disso é 
 recuperado um par de coordenadas que então passa pela api de mapas da Google (gerenciada pelo package @react-google-maps/api)
 e quando clica-se em um dos cartões renderizados com os dados da empresa uma página com um mapa é renderizada com o centro do mapa
 no par de coordenadas recuperado e com um marcador do google maps no local exato dessas coordenadas além de um cartão com os dados
