@@ -7,22 +7,23 @@ import {
 } from './Card-styled';
 
 
-const Card = () => {
+const Card = (props) => {
+    const { info } = props;
 
     return (
-        <Link to='/mapa'>
+        <Link to={`/mapa/${info.cnpj.replace(/\D/g, '')}`}>
             <CardPaper elevation={3}>
-                <CardBoldText>Conexa Hub de Inovação</CardBoldText>
+                <CardBoldText>{info.nome}</CardBoldText>
                 <CardText>Razão social</CardText>
 
                 <br />
 
-                <CardBoldText>342.454.0001-76</CardBoldText>
+                <CardBoldText>{info.cnpj}</CardBoldText>
                 <CardText>CNPJ</CardText>
 
                 <br />
 
-                <CardBoldText>Av. Brasil 2233 centro Goiânia</CardBoldText>
+                <CardBoldText>{`${info.logradouro} ${info.numero} ${info.bairro} ${info.municipio} ${info.uf}`}</CardBoldText>
                 <CardText>Endereço</CardText>
             </CardPaper>
         </Link>

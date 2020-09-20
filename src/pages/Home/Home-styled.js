@@ -1,3 +1,4 @@
+import { Button, darken, Fade, Modal } from '@material-ui/core';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 
@@ -74,7 +75,8 @@ export const HomeTilteContainer = styled.div`
 `;
 
 export const HomeTileIcon = styled.img`
-    width: 50px;
+    width: 48px;
+    height: 48px;
     margin-right: 20px;
 `;
 
@@ -98,5 +100,48 @@ export const SliderArrow = styled.img`
 
     &.slick-disabled {
         opacity: .5;
+    }
+`;
+
+export const HomeModal = styled(Modal)`
+    &&{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+`;
+
+export const HomeFade = styled(Fade)`
+    &&{
+        width: 300px;
+
+        background-color: #FFF;
+    }
+`;
+
+export const HomeModalTitle = styled.p`
+    font-size: 20px;
+    font-weight: bold;
+
+    text-align: center;
+`;
+
+export const HomeModalTxt = styled.p`
+    font-size: 18px;
+
+    text-align: center;
+`;
+
+export const HomeModalBtn = styled(Button)`
+    && {
+        width: 100%;
+
+        font-weight: bold;
+        font-size: 20px;
+
+        background-color: #3a8970;
+        color: #FFF;
+
+        &:hover{ background-color: ${darken('#3a8970', .2)} }
     }
 `;

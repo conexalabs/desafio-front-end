@@ -11,7 +11,11 @@ import {
 import BackArrowButton from './../../resources/svg/back-button.svg';
 import { Link } from 'react-router-dom';
 
-const CardMap = () => {
+// Os components Card e CardMaps não foram reaproveitados
+// prevendo que podem evoluir de forma diferentes
+const CardMap = (props) => {
+    const { info } = props;
+
     return (
         <CardMapPaper elevation={3}>
             <CardMapTop>
@@ -21,17 +25,17 @@ const CardMap = () => {
             </CardMapTop>
 
             <CardMapInfo>
-                <CardMapBoldText>Conexa Hub de Inovação</CardMapBoldText>
+                <CardMapBoldText>{info.nome}</CardMapBoldText>
                 <CardMapText>Razão social</CardMapText>
 
                 <br />
 
-                <CardMapBoldText>342.454.0001-76</CardMapBoldText>
+                <CardMapBoldText>{info.cnpj}</CardMapBoldText>
                 <CardMapText>CNPJ</CardMapText>
 
                 <br />
 
-                <CardMapBoldText>Av. Brasil 2233 centro Goiânia</CardMapBoldText>
+                <CardMapBoldText>{`${info.logradouro} ${info.numero} ${info.bairro} ${info.municipio} ${info.uf}`}</CardMapBoldText>
                 <CardMapText>Endereço</CardMapText>
             </CardMapInfo>
         </CardMapPaper>

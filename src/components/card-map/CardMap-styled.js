@@ -8,6 +8,13 @@ export const CardMapPaper = styled(Paper)`
         position: fixed;
         top: 20px;
         left: 20px;
+
+        @media screen and (max-width: 768px){
+            width: 100%;
+            border-radius: 0;
+            top: 0;
+            left: 0;
+        }
     }
 `;
 
@@ -16,8 +23,8 @@ export const CardMapTop = styled.div`
 `;
 
 export const CardMapBack = styled.img`
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
 `;
 
 export const CardMapInfo = styled.div`

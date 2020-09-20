@@ -8,6 +8,7 @@ import {
 // Pages
 import Home from './pages/Home/Home';
 import Mapa from './pages/Mapa/Mapa';
+import NotFound from './pages/NotFound/NotFound';
 
 // Components
 
@@ -16,7 +17,8 @@ const Routes = () => {
         <Router>
             <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/mapa" exact component={Mapa} />
+                <Route path="/mapa/:cnpj" component={Mapa} />
+                <Route component={NotFound} />
             </Switch>
         </Router>
     )
