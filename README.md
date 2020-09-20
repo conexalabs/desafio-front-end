@@ -2,67 +2,76 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+Para executar este projeto, digite:
 
-### `yarn start`
+### `yarn local`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+# Desafio \<front>developer\</end> ConexaLabs 2019
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Quer fazer parte da transformação do campo ~~escrevendo~~ codando o futuro do agronegócio?
 
-### `yarn build`
+Se deseja participar do nosso processo seletivo, siga as instruções deste desafio e execute os seguintes passos: 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Nos mande sua resolução em um *pull request* neste repositório.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Deixe a aplicação disponível publicamente em algum host ([GitHub Pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/),  [Firebase Hosting](https://firebase.google.com/docs/hosting), [Azure](https://azure.microsoft.com/pt-br/services/app-service/web/), ou qualquer um de sua preferência) para testes. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Por último, envie um email para [renatto.machado@hubconexa.com](mailto:renatto.machado@hubconexa.com) com seu CV anexado e o link da aplicação;
 
-### `yarn eject`
+  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Sobre a Conexa
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A [Conexa](http://hubconexa.com/) é um hub de inovação que vive o agronegócio e é protagonista em sua transformação e unimos pessoas que compartilham a crença de que o mundo pode ser mais sustentável e que o trabalho pode ser mais prazeroso.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+A equipe da Conexa Labs tem o propósito de tornar o agro mais simples, usando o que há de mais avançado em tecnologia para construir produtos e ferramentas que conectam pessoas e negócios aos resultados desejados.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# O desafio
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Você implementará uma aplicação web **responsiva** que consulta os dados de empresas em uma API, armazena no LocalStorage e mostra no mapa o endereço da empresa selecionada.
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+## Requisitos
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+1. Consulta de empresas pelo CNPJ;
+   1. O número do CNPJ deve ser válido antes de executar a requisição na API;
+   2. Caso o CNPJ não exista, o usuário deve ser informado;
+   3. Os dados da empresa devem ser armazenados no LocalStorage do navegador, se o usuário sair da página e voltar a lista de empresas consultadas anteriormente deve ser recuperada do LocalStorage;
+2. Mostrar uma lista em cards das empresas consultadas;
+3. Mostrar os dados da empresa e a localização no mapa;
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+## Protótipos
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+[Neste link](https://invis.io/Q6T6JI44FTY#/376025753_pesquisa) você encontrará os protótipos *navegáveis* feitos no Invision e [aqui](https://invis.io/Q6T6JI44FTY#/376033742_style_Guide) você poderá ver o style guide.
 
-### Deployment
+O layout e a estilização devem seguir a risca os protótipos e o style guide, tirando isso, você tem oportunidade de mostrar todo seu talento e criatividade.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `yarn build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Recomendações
+
+* Utilize um destes três frameworks: VueJS, React ou Angular;
+* Utilize SASS ou LESS;
+* Utilize a UI Library que preferir. Sugestões: [Element](https://element.eleme.io/), [Bootstrap](https://getbootstrap.com/), [Material](https://material.io/design/);
+* API de Consulta de CNPJs: https://receitaws.com.br/
+* Utilize ECMAScript 5 ou 6;
+* Linguagens: JavaScript ou TypeScript;
+* Utilize boas práticas de codificação, isso será avaliado;
+* Mostre que você manja dos paranauê do CSS3 (implemente animações, transições, efeitos, seja livre para voar!);
+* Código limpo, organizado e documentado (quando necessário);
+* Use e abuse de:
+  * Usabilidade;
+  * Criatividade;
+  * Performance;
+  * Manutenabilidade;
+  * Testes Unitários (quando necessário)
+  * ... pois avaliaremos tudo isso!
