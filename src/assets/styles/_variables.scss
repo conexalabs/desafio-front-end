@@ -1,0 +1,10 @@
+$primary: #3a8970;
+$ligth:#ffff;
+$gradiente: to right, #388669 , #459a9e;
+$textos: 20px;
+$textCard: 16px;
+
+@mixin style-card {
+    color: $primary;
+    font-size: $textCard;
+}

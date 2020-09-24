@@ -1,0 +1,33 @@
+@import '../assets/styles/variables';
+  h1 {
+    color: $primary;
+    font-size: 3.8rem;
+    @media screen and (max-width:480px){
+      font-size: 1.8rem;
+    }
+    @media screen and (max-width:320px){
+      font-size: 1.5rem;
+    }
+    font-family: roboto;
+  }
+  i {
+    font-size: 1em;
+  }
+  /* input */
+  .input-cnpj {
+    border-color: $primary;
+    border-width: 2px;
+    padding: 1.5rem 0.75rem !important;
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(54, 126, 57, 0.3);
+      border-color: $primary;
+    }
+  }
+  .btn-success{
+    background-color:$primary;
+    border-radius: 20px;
+    padding: 0.6rem !important;
+    span {
+      color: $ligth;
+    }
+  }

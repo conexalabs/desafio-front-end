@@ -1,0 +1,53 @@
+ @import "../assets/styles/bootstrap";
+ @import "../assets/styles/variables";
+
+.carousel {
+  height: 100%;
+  li, p {
+    @include style-card;
+  }
+  li {
+    text-transform: lowercase;
+    font-size: $textCard;
+    font-weight: 600;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+    &::first-line {
+      text-transform: capitalize;
+    }
+    p {
+      line-height: 1;
+    }
+  }
+  .cards {
+    padding: 0 5px;
+    text-align: left;
+    .card {
+      border-radius: 0.65rem;
+      transition: 0.9s ease;
+    &:hover {
+      transform: scale(1.03);
+      }
+    }
+  }
+  img {
+    width: 100%;
+  }
+  .fa-chevron-left{
+    left: -20px;
+  }
+  .fa-chevron-right {
+    right: -20px;
+  }
+  .fa-chevron-right,
+  .fa-chevron-left {
+    position: absolute;
+    font-size: 3rem;
+    top: 50%;
+    line-height: 0 ;
+    }
+    a:link {
+      text-decoration: none;
+    }
+}
