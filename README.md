@@ -11,8 +11,6 @@
     <img alt="Made by Leandro Pedroso" src="https://img.shields.io/badge/made%20by-Leandroppf-%2304D361">
   </a>
 
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
-
   <a href="https://github.com/leandroppf/localizador-de-empresas/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/leandroppf/localizador-de-empresas?style=social">
   </a>
