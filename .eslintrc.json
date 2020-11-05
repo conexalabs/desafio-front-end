@@ -25,6 +25,8 @@
         "prettier"
     ],
     "rules": {
+      "no-new":"off",
+      "import/no-unresolved": "off",
       "prettier/prettier": "error",
       "no-use-before-define": "off",
       "react-hooks/rules-of-hooks": "error",

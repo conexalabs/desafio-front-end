@@ -1,7 +1,13 @@
 import React from 'react';
 
-function App() {
-  return <h1>Hello World</h1>;
-}
+import './styles/global.scss';
+
+import Home from './pages/Home';
+
+const App: React.FC = () => (
+  <>
+    <Home />
+  </>
+);
 
 export default App;
