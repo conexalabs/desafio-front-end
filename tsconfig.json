@@ -19,7 +19,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "types": ["googlemaps"]
+    "types": ["googlemaps"],
+    "noImplicitAny": false
   },
   "include": [
     "src"

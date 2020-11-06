@@ -1,0 +1,37 @@
+$main-color: #3a8970;
+
+.map-card-main-content{
+  position: absolute;
+  width: 280px;
+  height: 320px;
+  background-color: white;
+  color: $main-color;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  box-shadow: 2px 1px 10px 5px #d9d9d9;
+  border-radius: 0 0 15px 0;
+
+  h3 {
+    color: $main-color;
+    font-weight: bold;
+    margin: 20px 0 0 0;
+  }
+
+  span {
+    color: $main-color;
+    margin: 0 !important;
+  }
+
+  a {
+    margin-bottom: 15px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

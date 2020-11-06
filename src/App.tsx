@@ -1,13 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import './styles/global.scss';
+import Routes from './routes';
 
-import Home from './pages/Home';
+import { ContextProvider } from './context/Context';
 
 const App: React.FC = () => (
-  <>
-    <Home />
-  </>
+  <ContextProvider>
+    <Router>
+      <Routes />
+    </Router>
+  </ContextProvider>
 );
 
 export default App;

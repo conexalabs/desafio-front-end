@@ -1,1 +1,122 @@
+$main-color: #3a8970;
+$gradient-start-color: #388669;
+$gradient-end-color: #459A9E;
+$img-size: 250px;
+
+.main-content{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.header-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title-content {
+    margin: 20px 0;
+
+    span {
+      font-size: 60px;
+      color: $main-color;
+
+      svg {
+        width: 48px;
+        height: 48px;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .search-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+
+    .input-content{
+      .form-control {
+        font-size: 20px !important;
+        padding: 30px 20px;
+        border: $main-color 2px solid;
+        width: 350px;
+        height: 50px;
+
+        &::placeholder{
+          color: #969999;
+        }
+      }
+
+      span {
+        position: absolute;
+        color: red;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+
+    .btn-primary {
+      color: white !important;
+      font-size: 20px !important;
+      font-weight: bold !important;
+      border-radius: 25px;
+      margin-left: 20px;
+      padding: 0 30px;
+      height: 50px;
+      transition: 400ms background-color, 400ms color;
+
+      &:hover {
+        background-color: white !important;
+        color: $main-color !important;
+      }
+    }
+  }
+}
+
+.list-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background: linear-gradient(100deg, $gradient-start-color 0%, $gradient-end-color 100%);
+
+  img {
+    width: $img-size;
+    height: $img-size;
+  }
+
+  span {
+    color: white;
+  }
+
+  .react-multi-carousel-list {
+    @media (min-width: 1500px){
+      max-width: 1480px;
+    }
+  }
+
+  .react-multiple-carousel__arrow {
+    background-color: transparent;
+    text-decoration: none;
+    border: none !important;
+  }
+
+  .react-multiple-carousel__arrow--left {
+    color: white;
+    left: calc(-1% + 1px) !important;
+    text-decoration: none;
+  }
+
+  .react-multiple-carousel__arrow--right {
+    color: white;
+    right: calc(-1% + 1px) !important;
+    text-decoration: none;
+  }
+}
+
 @import '~bootstrap/scss/bootstrap.scss';
