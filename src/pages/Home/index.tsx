@@ -137,14 +137,14 @@ const Home: React.FC = () => {
                 desktop: {
                   breakpoint: {
                     max: 3000,
-                    min: 1024,
+                    min: 1200,
                   },
                   items: 3,
                   partialVisibilityGutter: 40,
                 },
                 mobile: {
                   breakpoint: {
-                    max: 464,
+                    max: 800,
                     min: 0,
                   },
                   items: 1,
@@ -153,7 +153,7 @@ const Home: React.FC = () => {
                 tablet: {
                   breakpoint: {
                     max: 1200,
-                    min: 464,
+                    min: 800,
                   },
                   items: 2,
                   partialVisibilityGutter: 30,
