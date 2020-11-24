@@ -2,15 +2,15 @@
 
 Quer fazer parte da transformação do campo ~~escrevendo~~ codando o futuro do agronegócio?
 
-Se deseja participar do nosso processo seletivo, siga as instruções deste desafio e execute os seguintes passos: 
+Se deseja participar do nosso processo seletivo, siga as instruções deste desafio e execute os seguintes passos:
 
 * Nos mande sua resolução em um *pull request* neste repositório.
 
-* Deixe a aplicação disponível publicamente em algum host ([GitHub Pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/),  [Firebase Hosting](https://firebase.google.com/docs/hosting), [Azure](https://azure.microsoft.com/pt-br/services/app-service/web/), ou qualquer um de sua preferência) para testes. 
+* Deixe a aplicação disponível publicamente em algum host ([GitHub Pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/),  [Firebase Hosting](https://firebase.google.com/docs/hosting), [Azure](https://azure.microsoft.com/pt-br/services/app-service/web/), ou qualquer um de sua preferência) para testes.
 
 * Por último, envie um email para [renatto.machado@hubconexa.com](mailto:renatto.machado@hubconexa.com) com seu CV anexado e o link da aplicação;
 
-  
+
 
 # Sobre a Conexa
 
