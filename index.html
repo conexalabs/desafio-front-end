@@ -2,31 +2,54 @@
 <html>
 
 <head>
-    <link href="https://hubconexa.com/wp-content/themes/conexa/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://hubconexa.com/wp-content/themes/conexa/assets/images/favicon.ico" rel="shortcut icon"
+    type="image/x-icon">
 
-    <title>Desafio Front-End Developer ConexaLabs</title>
+  <title>Desafio Front-End Developer ConexaLabs</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
-    <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="./assets/styles.css">
 
-    <script src="https://kit.fontawesome.com/aa42c16abd.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+  <script src="https://kit.fontawesome.com/aa42c16abd.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@next"></script>
 </head>
 
 <body>
-    <div id="app">
-        <h1>
-            {{ title }}
-            <i class="fas fa-thumbs-up fa"></i>
-        </h1>
+  <div id="app">
+    <nav class="navbar">
+      <span class="title">
+        <i class="navbar-brand fas fa-building" aria-hidden="true"></i>
+        {{ title }}
+      </span>
+
+      <form action="" class="navbar-form form form-inline">
+        <input class="form-input" type="search" name="search" id="search" placeholder="CNPJ">
+        <button class="button button-pill button-primary navbar-button " type="submit">Localizar</button>
+      </form>
+    </nav>
+
+    <div class="panel">
+      <slider :objects="companies"
+        @shuffle="shuffleCompanies"
+        @next="rotateLeft"
+        @prev="rotateRight"/>
     </div>
 
+    <footer class="footer">
 
-    <script src="./main.js"></script>
-    <script>
-        const App = app.mount('#app');
-    </script>
+    </footer>
+  </div>
+
+
+  <script src="./main.js"></script>
+  <script src="./components/Cards.js"></script>
+  <script src="./components/Slider.js"></script>
+  <script>
+    const App = app.mount('#app');
+  </script>
 </body>
 
 </html>
