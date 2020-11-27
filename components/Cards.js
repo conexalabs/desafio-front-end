@@ -23,7 +23,4 @@ app.component('card', {
       </div>
     </div>
   </div>`,
-  data: function() {
-    return  {};
-  }
 })

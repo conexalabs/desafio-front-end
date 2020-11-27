@@ -1,26 +1,10 @@
 app.component('slider', {
-  created() {
-    var vw = window.innerWidth; // TO-DO: find properly way to get an viewport value;
-    var elWidth = 260;          // TO-DO: find properly way to get an element attribute;
-    var elements = [];
-
-    this.size = Math.round( (vw - 100) / elWidth );
-
-    do {
-      elements = elements.concat([...this.objects]);
-    } while(elements.length < this.size + 2);
-
-    this.elements = elements.map(e => e = {...e});
-  },
   props:{
-    objects: Object,
+    elements: Object,
   },
   template:/*html*/`
     <div id="slider" class="container flex-column-center">
-      <transition-group name="slider-list" class="slider" tag="div"
-        @enter="enter"
-        @leave="leave"
-      >
+      <transition-group name="slider-list" class="slider" tag="div">
         <card v-for="(company, index) in elements"
           class="element card"
           :class="elementVisibility(index)"
@@ -33,40 +17,32 @@ app.component('slider', {
       </transition-group>
 
       <div>
-        <button class="button slider-button"
-          :class="{ 'slider-no-pointer-events' : inTransition }"
-          @click="prev"
-        >
+        <button class="button slider-button" @click="prev">
           <i class="fa fa-arrow-circle-left"></i>
         </button>
         <button class="button slider-button" @click="shuffle">Shuffle</button>
-        <button class="button slider-button" @click="next"><i class="fa fa-arrow-circle-right"></i></button>
+        <button class="button slider-button" @click="next">
+          <i class="fa fa-arrow-circle-right"></i>
+        </button>
       </div>
     </div>`,
-  data() {
-    return {
-      elements: [],
-      inTransition: false,
-    }
+  computed: {
+    ...Vuex.mapState([
+      'viewportWidth'
+    ]),
+    threshold() {
+      return Math.round( (this.viewportWidth - 100) / 260 );
+    },
   },
   methods: {
-    enter(){
-      console.log("enter");
-      this.inTransition = true;
-    },
-    leave(){
-      console.log("leave");
-      this.inTransition = false;
-    },
     elementVisibility(i) {
       var elementClass = "";
       var count = this.elements.length;
-      var size  = this.size;
+      var threshold  = this.threshold;
       var start, end;
 
-      start = Math.floor( (count - size) / 2 );
-      end = count - start - (size % 2);
-      console.log("size:", size, "count:", count, "start:", start, "end:", end);
+      start = Math.floor( (count - threshold) / 2 );
+      end = count - start - (threshold % 2);
 
       if(start <= i && i <= end) {
         elementClass += ( i == start || i == end) ? 'card-inactive' :  'card-active';
@@ -77,18 +53,13 @@ app.component('slider', {
       return elementClass;
     },
     shuffle() {
-      this.elements = _.shuffle(this.elements);
+      this.$store.commit('shuffle');
     },
     next() {
-      this.elements.push(this.elements.shift());
+      this.$store.commit('rotateListLeft');
     },
     prev() {
-      this.elements.unshift(this.elements.pop());
+      this.$store.commit('rotateListRight');
     },
   },
-  computed: {
-    count() {
-      return this.objects.length;
-    },
-  }
 })

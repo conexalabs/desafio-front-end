@@ -14,28 +14,18 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
   <script src="https://kit.fontawesome.com/aa42c16abd.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/vue-router@next"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuex@4.0.0-rc.2/dist/vuex.global.min.js"></script>
 </head>
 
 <body>
   <div id="app">
-    <nav class="navbar">
-      <span class="title">
-        <i class="navbar-brand fas fa-building" aria-hidden="true"></i>
-        {{ title }}
-      </span>
-
-      <form action="" class="navbar-form form form-inline">
-        <input class="form-input" type="search" name="search" id="search" placeholder="CNPJ">
-        <button class="button button-pill button-primary navbar-button " type="submit">Localizar</button>
-      </form>
-    </nav>
+    <navbar :title="title"></navbar>
 
     <div class="panel">
-      <slider :objects="companies"
-        @shuffle="shuffleCompanies"
-        @next="rotateLeft"
-        @prev="rotateRight"/>
+      <slider :elements="sliderList"/>
     </div>
 
     <footer class="footer">
@@ -43,12 +33,15 @@
     </footer>
   </div>
 
-
+  <script src="./store/index.js"></script>
   <script src="./main.js"></script>
   <script src="./components/Cards.js"></script>
+  <script src="./components/Navbar.js"></script>
   <script src="./components/Slider.js"></script>
+
   <script>
-    const App = app.mount('#app');
+    app.use(store);
+    app.mount('#app');
   </script>
 </body>
 
