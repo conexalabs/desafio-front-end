@@ -1,6 +1,6 @@
 const { components } = app._context;
 
-const Home = { template: `<div>home</div>` }
+const Home = { template: `<div></div>` }
 const GoogleMaps = components.GoogleMaps;
 const routerHistory = VueRouter.createWebHashHistory();
 

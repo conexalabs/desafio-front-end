@@ -14,10 +14,7 @@ app.component('TheNavbar', {
       <button class="button button-pill button-primary navbar-button" type="submit" >Localizar</button>
     </form>
 
-    <ul style="display: flex; justify-content: space-between; width: 120px;">
-      <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/location">Mapa</router-link></li>
-    </ul>
+    <router-link to="/location">GoogleMaps</router-link>
   </nav>`,
   data() {
     return {

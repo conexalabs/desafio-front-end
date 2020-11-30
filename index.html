@@ -18,6 +18,8 @@
   <script src="https://unpkg.com/vue@next"></script>
   <script src="https://unpkg.com/vue-router@next"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuex@4.0.0-rc.2/dist/vuex.global.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHGJa9yrOxNrz--WfDOa7drn9P5-y9KOc&region=BR&language=pt-Br&libraries=&v=weekly"></script>
+
 </head>
 
 <body>
@@ -30,16 +32,15 @@
       <slider :elements="sliderList"/>
     </div>
 
-    <footer class="footer">
-    </footer>
+    <footer class="footer"></footer>
   </div>
 
   <script src="./main.js"></script>
-  <script src="./store/index.js"></script>
   <script src="./components/GoogleMaps.js"></script>
   <script src="./components/Slider.js"></script>
   <script src="./components/SliderCard.js"></script>
   <script src="./components/TheNavbar.js"></script>
+  <script src="./store/index.js"></script>
   <script src="./router/index.js"></script>
 
   <script>
