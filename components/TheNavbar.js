@@ -1,4 +1,4 @@
-app.component('navbar', {
+app.component('TheNavbar', {
   props:{
     title: String,
   },
@@ -13,6 +13,11 @@ app.component('navbar', {
       <input class="form-input" v-model.number="cnpj" type="search" placeholder="CNPJ...">
       <button class="button button-pill button-primary navbar-button" type="submit" >Localizar</button>
     </form>
+
+    <ul style="display: flex; justify-content: space-between; width: 120px;">
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/location">Mapa</router-link></li>
+    </ul>
   </nav>`,
   data() {
     return {

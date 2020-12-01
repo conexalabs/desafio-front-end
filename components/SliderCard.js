@@ -1,4 +1,4 @@
-app.component('card', {
+app.component('SliderCard', {
   props: {
     address: String,
     cnpj: String,

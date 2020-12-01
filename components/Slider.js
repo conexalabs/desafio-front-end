@@ -1,11 +1,11 @@
-app.component('slider', {
+app.component('Slider', {
   props:{
     elements: Object,
   },
   template:/*html*/`
     <div id="slider" class="container flex-column-center">
       <transition-group name="slider-list" class="slider" tag="div">
-        <card v-for="(company, index) in elements"
+        <slider-card v-for="(company, index) in elements"
           class="element card"
           :class="elementVisibility(index)"
           :key="company"

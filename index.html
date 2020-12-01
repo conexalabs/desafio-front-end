@@ -22,26 +22,28 @@
 
 <body>
   <div id="app">
-    <navbar :title="title"></navbar>
+    <the-navbar :title="title"></the-navbar>
+
+    <router-view></router-view>
 
     <div class="panel">
       <slider :elements="sliderList"/>
     </div>
 
     <footer class="footer">
-
     </footer>
   </div>
 
-  <script src="./store/index.js"></script>
   <script src="./main.js"></script>
-  <script src="./components/Cards.js"></script>
-  <script src="./components/Navbar.js"></script>
+  <script src="./store/index.js"></script>
+  <script src="./components/GoogleMaps.js"></script>
   <script src="./components/Slider.js"></script>
+  <script src="./components/SliderCard.js"></script>
+  <script src="./components/TheNavbar.js"></script>
+  <script src="./router/index.js"></script>
 
   <script>
-    app.use(store);
-    app.mount('#app');
+    app.use(store).use(router).mount('#app');
   </script>
 </body>
 
