@@ -39,10 +39,8 @@ app.component('Slider', {
       var elementClass = "";
       var count = this.elements.length;
       var threshold  = this.threshold;
-      var start, end;
-
-      start = Math.floor( (count - threshold) / 2 );
-      end = count - start - (threshold % 2);
+      var start = Math.floor( (count - threshold) / 2 );
+      var end = count - start - (threshold % 2);
 
       if(start <= i && i <= end) {
         elementClass += ( i == start || i == end) ? 'card-inactive' :  'card-active';

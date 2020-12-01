@@ -155,9 +155,17 @@ body {
   background: linear-gradient(90deg, #3a8970 0%, #459a9e 75%, #388699 100%);
 }
 
+.title {
+  font-size: 60px;
+  font-weight: 400;
+}
+
 .slider {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
 }
 .slider-button {
   font-size: 16px;
@@ -165,17 +173,9 @@ body {
 .slider-no-pointer-events {
   pointer-events: none;
 }
-.slider-shift-left {
-  margin: -260px;
-}
-
-.title {
-  font-size: 60px;
-  font-weight: 400;
-}
 
 .slider-list-move {
-  transition: transform 0.8s ease, opacity 0.2s ease 0.2s;
+  transition: transform 0.8s ease, opacity 0.6s ease 0.8s;
 }
 .slider-list-enter-active, .slider-list-leave-active {
   transition: all 1s;

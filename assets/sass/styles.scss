@@ -190,26 +190,10 @@ body {
   background: linear-gradient(90deg, $color-gradient1 0%, $color-gradient2 75%, $color-primary 100%);
 }
 
-.slider {
-  display: flex;
-  align-items: center;
-
-  &-button {
-    font-size: 16px;
-  }
-
-  &-no-pointer-events {
-    pointer-events: none;
-  }
-
-  &-shift-left {
-    margin: -260px;
-  }
-}
-
 .title {
   font-size: 60px;
   font-weight: 400;
 }
 
+@import 'slider';
 @import 'transitions';
