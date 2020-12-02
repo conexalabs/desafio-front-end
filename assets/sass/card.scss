@@ -1,0 +1,61 @@
+
+.card {
+  box-sizing: border-box;
+  width: 16.25rem;
+  min-width: 16.25rem;
+  /* max-height: 15rem; */
+  margin: 1rem;
+  border-radius: 0.75rem;
+  background: $color-white;
+
+  transition: opacity 1.25s;
+
+  &-active {
+    opacity: 1;
+  }
+
+  &-header {
+    margin-bottom: 1.2rem;
+    margin-top: 0.25rem;
+
+    &-button {
+      padding: 0;
+      z-index: 10;
+
+      background-color: transparent;
+      border: none;
+      border-radius: 50%;
+    }
+
+    &-left{
+      margin-left: -0.5rem;
+    }
+  }
+
+  &-hidden {
+    opacity: 0;
+  }
+
+  &-inactive {
+    opacity: 0.8;
+
+    &::hover {
+      opacity: 0.6;
+    }
+  }
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: -webkit-fill-available;
+    padding: 1.2rem 1rem 0.6rem;
+  }
+
+  &-item {
+    flex-direction: column-reverse;
+
+    color: $color-primary;
+  }
+}

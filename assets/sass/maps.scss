@@ -1,0 +1,26 @@
+
+.maps {
+
+  &-canvas {
+    position: fixed !important;
+    width: 100%;
+    height: calc(100% - 14.8rem);
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+  }
+
+  &-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    padding-left: 0.5rem;
+    margin: 0;
+    border-radius: 0;
+    border-bottom-right-radius: 0.75rem;
+    box-shadow: 4px 5px 8px 3px rgba(0, 0, 0, 0.3);
+
+    z-index: 10;
+  }
+}

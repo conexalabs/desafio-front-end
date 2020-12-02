@@ -5,11 +5,10 @@ app.component('Slider', {
   template:/*html*/`
     <div id="slider" class="container flex-column-center">
       <transition-group name="slider-list" class="slider" tag="div">
-        <slider-card v-for="(company, index) in elements"
-          class="element card"
+        <info-card v-for="(company, index) in elements"
+          class="element"
           :class="elementVisibility(index)"
           :key="company"
-          :index="index"
           :social="company.social"
           :cnpj="company.cnpj"
           :address="company.address"

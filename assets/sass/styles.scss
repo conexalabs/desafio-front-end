@@ -19,17 +19,14 @@ html, body, #map {
   padding: 0;
 }
 
-#map {
-  height: calc(100% - 14.8rem);
-  position: fixed !important;
-  z-index: 5;
-}
-
 .block {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
+  margin-top: 0.25rem;
 }
 
 .button {
+  cursor: pointer;
+
   background-color: $color-white;
   border-color: $color-primary;
   border-style: solid;
@@ -38,16 +35,12 @@ html, body, #map {
   padding: 0.7em 1.2em;
 
   color: $color-primary;
-  cursor: pointer;
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
 
   &-back {
-    position: absolute;
-
-    left: 2rem;
-    top: 2rem;
+    margin-left: -0.5rem;
     padding: 0;
     z-index: 10;
 
@@ -64,50 +57,6 @@ html, body, #map {
   &-pill {
     border-radius: 1.5em;
     font-size: 19px;
-  }
-}
-
-.card {
-  box-sizing: border-box;
-  width: 16.25rem;
-  height: 15rem;
-  min-width: 16.25rem;
-  max-height: 15rem;
-  margin: 1rem;
-  border-radius: 0.75rem;
-  background: $color-white;
-
-  transition: opacity 1.25s;
-
-  &-active {
-    opacity: 1;
-  }
-
-  &-hidden {
-    opacity: 0;
-  }
-
-  &-inactive {
-    opacity: 0.8;
-
-    &::hover {
-      opacity: 0.6;
-    }
-  }
-
-  &-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    height: -webkit-fill-available;
-    padding: 1.2rem 1rem;
-  }
-
-  &-item {
-    flex-direction: column-reverse;
-
-    color: $color-primary;
   }
 }
 
@@ -175,7 +124,9 @@ html, body, #map {
 
   &-label{
     order: 1;
+    font-size: 0.9rem;
     font-weight: 400;
+    line-height: 1.25rem;
   }
   &-content{
     order: 2;
@@ -231,5 +182,7 @@ html, body, #map {
   font-weight: 400;
 }
 
+@import 'card';
+@import 'maps';
 @import 'slider';
 @import 'transitions';

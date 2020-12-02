@@ -1,16 +1,14 @@
 app.component('GoogleMaps', {
   template: /*html*/ `
-  <div class="position-relative">
-    <router-link to="/">
-      <button class="button button-back">
-        <span class="fa-stack">
-          <i class="far fa-circle fa-stack-2x"></i>
-          <i class="fas fa-arrow-left fa-stack-1x"></i>
-        </span>
-      </button>
-    </router-link>
+  <div class="maps position-relative">
+    <info-card
+      card-type="maps"
+      :social="currentCompany.social"
+      :cnpj="currentCompany.cnpj"
+      :address="currentCompany.address"
+    />
 
-    <div id="map"></div>
+    <div id="map" class="maps-canvas"></div>
   </div>
   `,
   mounted() {
@@ -28,6 +26,10 @@ app.component('GoogleMaps', {
       position: coordinates,
       map: map,
     });
-
+  },
+  computed: {
+    ...Vuex.mapState([
+      'currentCompany'
+    ]),
   }
 })

@@ -33,7 +33,12 @@ const store = Vuex.createStore({
         //   address: "Av Brasil 2233, Centro, Goiânia"
         // },
       ],
-      currentCompany: {},
+      currentCompany: {
+        id: "1234",
+        social: "Conexa Hub de Inovação 1",
+        cnpj: "342.454.0001-76",
+        address: "Av Brasil 2233, Centro, Goiânia"
+      },
       sliderList: [],
       viewportWidth: window.innerWidth,
     }
