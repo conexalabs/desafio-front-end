@@ -190,7 +190,8 @@ html, body {
 .maps-canvas {
   position: fixed !important;
   width: 100%;
-  height: calc(100% - 14.8rem);
+  /*height: calc(100% - 14.8rem);*/
+  height: 100%;
   margin: 0;
   padding: 0;
   z-index: 5;
@@ -206,6 +207,15 @@ html, body {
   border-bottom-right-radius: 0.75rem;
   box-shadow: 4px 5px 8px 3px rgba(0, 0, 0, 0.3);
   z-index: 10;
+}
+.maps-label {
+  position: relative;
+  left: 6em;
+  /* top: 8px; */
+  max-width: 10em;
+  text-align: start;
+  white-space: normal;
+  line-height: 16px;
 }
 
 .slider {
