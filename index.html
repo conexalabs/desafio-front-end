@@ -32,11 +32,12 @@
       <div class="panel">
         <slider :elements="sliderList" v-slot="{ element, visibility }">
           <info-card class="slider-element"
-            :key="element"
-            :class="visibility"
-            :nome="element.nome"
-            :cnpj="element.cnpj"
-            :endereco="element.endereco"
+          :class="visibility"
+          :key="element"
+          :id="element.cnpjNumber"
+          :name="element.name"
+          :cnpj="element.cnpj"
+          :address="element.address"
           />
         </slider>
       </div>

@@ -38,8 +38,9 @@ const store = Vuex.createStore({
       var sampleData = [
         {
           id: "1234",
-          nome: "Conexa Hub de Inovação",
+          name: "Conexa Hub de Inovação",
           cnpj: "342.454.0001-76",
+          cnpjNumber: "342454000176",
           endereco: {
             logradouro: "Av Brasil",
             numero: "2233",
@@ -47,12 +48,14 @@ const store = Vuex.createStore({
             municipio: "Goiânia",
             uf: "GO",
             cep: ''
-          }
+          },
+          address: "Av Brasil, 2233, Centro, Goiânia-GO",
         },
         {
           id: "5678",
-          nome: "Conexa Hub de Inovação",
+          name: "Conexa Hub de Inovação",
           cnpj: "342.454.0001-76",
+          cnpjNumber: "342454000176",
           endereco: {
             logradouro: "Av Caiapó",
             numero: "",
@@ -60,7 +63,8 @@ const store = Vuex.createStore({
             municipio: "Goiânia",
             uf: "GO",
             cep: ''
-          }
+          },
+          address: "Av Caiapó, Goiânia-GO",
         },
       ];
 
@@ -96,10 +100,20 @@ const store = Vuex.createStore({
     },
 
     addCompany (state, data) {
-      const { nome, cnpj, logradouro, numero, bairro, municipio, uf, cep } = data;
+      const { nome, cnpj, logradouro, numero, bairro, municipio, uf } = data;
       const company = {
-        nome, cnpj,
-        endereco: { logradouro, numero, bairro, municipio, uf, cep },
+        cnpj,
+        cnpjNumber: cnpj.match(/\d+/g).join(''),
+        name: nome.split(' ').map(e => _.upperFirst(e.toLowerCase())).join(' '),
+        address: [
+          logradouro,
+          numero,
+          bairro,
+          municipio,
+        ].map( function(element) {
+          let arr = element.split(' ');
+          return arr.map(e => _.upperFirst(e.toLowerCase())).join(' ');
+        }).join(', ').concat('-', uf),
       }
 
       store.commit('updateSliderList', company);

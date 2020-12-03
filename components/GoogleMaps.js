@@ -3,31 +3,44 @@ app.component('GoogleMaps', {
   <div class="maps position-relative">
     <info-card
       card-type="maps"
-      :nome="currentCompany.nome"
+      :id="currentCompany.cnpjNumber"
+      :name="currentCompany.name"
       :cnpj="currentCompany.cnpj"
-      :endereco="currentCompany.endereco"
+      :address="currentCompany.address"
     />
 
     <div id="map" class="maps-canvas"></div>
   </div>
   `,
   mounted() {
-    const coordinates = { lat: -16.70, lng: -49.25 };
+    const geocoder = new google.maps.Geocoder();
 
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: coordinates,
-      zoom: 13,
-      disableDefaultUI: true,
-    });
+    geocoder.geocode({
+      address: this.address,
+    }, function(result, _status) {
+      const { bounds, location, viewport } = result[0].geometry;
+      const coordinates = bounds ? bounds.getCenter() : location;
 
-    const marker = new google.maps.Marker({
-      position: coordinates,
-      map: map,
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: coordinates,
+        disableDefaultUI: true,
+        zoom: 15,
+      });
+
+      map.fitBounds(viewport);
+
+      const marker = new google.maps.Marker({
+        position: coordinates,
+        map: map,
+      });
     });
   },
   computed: {
     ...Vuex.mapState([
       'currentCompany'
     ]),
+    address() {
+      return this.currentCompany.address;
+    }
   }
 })
