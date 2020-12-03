@@ -5,14 +5,10 @@ app.component('Slider', {
   template:/*html*/`
     <div id="slider" class="container flex-column-center">
       <transition-group name="slider-list" class="slider" tag="div">
-        <info-card v-for="(company, index) in elements"
-          class="element"
-          :class="elementVisibility(index)"
-          :key="company"
-          :nome="company.nome"
-          :cnpj="company.cnpj"
-          :endereco="company.endereco"
-        />
+        <slot v-for="(element, index) in elements"
+          :visibility="elementVisibility(index)"
+          :element="element"
+        ></slot>
       </transition-group>
 
       <div>
@@ -35,16 +31,16 @@ app.component('Slider', {
   },
   methods: {
     elementVisibility(i) {
-      var elementClass = "";
+      var elementClass = '';
       var count = this.elements.length;
       var threshold  = this.threshold;
       var start = Math.floor( (count - threshold) / 2 );
       var end = count - start - (threshold % 2);
 
       if(start <= i && i <= end) {
-        elementClass += ( i == start || i == end) ? 'card-inactive' :  'card-active';
+        elementClass += 'slider-element-' + ( i == start || i == end ? 'inactive' :  'active');
       } else {
-        elementClass += 'card-hidden';
+        elementClass += 'slider-element-hidden';
       }
 
       return elementClass;

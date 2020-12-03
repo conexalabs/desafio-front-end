@@ -28,9 +28,19 @@
 
     <router-view></router-view>
 
-    <div class="panel">
-      <slider :elements="sliderList"/>
-    </div>
+    <main>
+      <div class="panel">
+        <slider :elements="sliderList" v-slot="{ element, visibility }">
+          <info-card class="slider-element"
+            :key="element"
+            :class="visibility"
+            :nome="element.nome"
+            :cnpj="element.cnpj"
+            :endereco="element.endereco"
+          />
+        </slider>
+      </div>
+    </main>
 
     <footer class="footer"></footer>
   </div>

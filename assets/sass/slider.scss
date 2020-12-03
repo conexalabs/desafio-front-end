@@ -10,6 +10,26 @@
     font-size: 16px;
   }
 
+  &-element {
+    margin: 1rem;
+
+    &-active {
+      opacity: 1;
+    }
+
+    &-hidden {
+      opacity: 0;
+    }
+
+    &-inactive {
+      opacity: 0.8;
+
+      &::hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
   &-no-pointer-events {
     pointer-events: none;
   }

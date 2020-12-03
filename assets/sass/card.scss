@@ -3,7 +3,7 @@
   box-sizing: border-box;
   width: 16.25rem;
   min-width: 16.25rem;
-  margin: 1rem;
+  max-height: 15rem;
   border-radius: 0.75rem;
   background: $color-white;
 
@@ -28,18 +28,6 @@
 
     &-left{
       margin-left: -0.5rem;
-    }
-  }
-
-  &-hidden {
-    opacity: 0;
-  }
-
-  &-inactive {
-    opacity: 0.8;
-
-    &::hover {
-      opacity: 0.6;
     }
   }
 
