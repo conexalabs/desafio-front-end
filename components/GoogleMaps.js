@@ -3,17 +3,15 @@ app.component('GoogleMaps', {
   <div class="maps position-relative">
     <info-card
       card-type="maps"
-      :social="currentCompany.social"
+      :nome="currentCompany.nome"
       :cnpj="currentCompany.cnpj"
-      :address="currentCompany.address"
+      :endereco="currentCompany.endereco"
     />
 
     <div id="map" class="maps-canvas"></div>
   </div>
   `,
   mounted() {
-    console.log(google);
-
     const coordinates = { lat: -16.70, lng: -49.25 };
 
     map = new google.maps.Map(document.getElementById('map'), {

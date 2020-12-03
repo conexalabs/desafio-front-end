@@ -1,8 +1,8 @@
 app.component('InfoCard', {
   props: {
-    address: String,
+    endereco: Object,
     cnpj: String,
-    social: String,
+    nome: String,
     cardType: String,
   },
   template: /*html*/
@@ -21,7 +21,7 @@ app.component('InfoCard', {
 
       <div class="card-item item">
         <span class="item-label">Razão Social</span>
-        <span class="item-content">{{ social }}</span>
+        <span class="item-content">{{ name  }}</span>
       </div>
 
       <div class="card-item item">
@@ -37,7 +37,22 @@ app.component('InfoCard', {
   </div>`,
   computed: {
     isInsideMaps() {
-      return this.cardType == 'maps';
+      return this.cardType === 'maps';
+    },
+    address() {
+      if(typeof this.endereco === 'object' ) {
+        let arr = Object.values(this.endereco).slice(0,-2).filter(e => e);
+
+        return arr.map( function(element) {
+          let arr = element.split(' ');
+          return arr.map(e => _.upperFirst(e.toLowerCase())).join(' ');
+        }).join(', ').concat('-', this.endereco.uf);
+      }
+
+      return this.endereco;
+    },
+    name() {
+      return this.nome.split(' ').map(e => _.upperFirst(e.toLowerCase())).join(' ');
     }
-  }
+  },
 })

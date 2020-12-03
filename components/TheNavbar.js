@@ -10,7 +10,7 @@ app.component('TheNavbar', {
     </span>
 
     <form class="navbar-form form form-inline" @submit.prevent="onSubmit">
-      <input class="form-input" v-model.number="cnpj" type="search" placeholder="CNPJ...">
+      <input class="form-input" v-model="cnpj" type="search" placeholder="CNPJ...">
       <button class="button button-pill button-primary navbar-button" type="submit" >Localizar</button>
     </form>
 
@@ -23,7 +23,7 @@ app.component('TheNavbar', {
   },
   methods: {
     onSubmit() {
-      this.$store.dispatch('getCompany', this.cnpj);
+      this.$store.dispatch('handleSearch', this.cnpj);
     }
   }
 })

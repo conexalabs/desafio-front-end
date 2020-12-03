@@ -1,55 +1,29 @@
 const store = Vuex.createStore({
   state() {
     return {
-      companies: [
-        {
-          id: "1234",
-          social: "Conexa Hub de Inovação 1",
-          cnpj: "342.454.0001-76",
-          address: "Av Brasil 2233, Centro, Goiânia"
-        },
-        {
-          id: "5678",
-          social: "Conexa Hub de Inovação 2",
-          cnpj: "342.454.0001-76",
-          address: "Av Brasil 2233, Centro, Goiânia"
-        },
-        {
-          id: "9012",
-          social: "Conexa Hub de Inovação 3",
-          cnpj: "342.454.0001-76",
-          address: "Av Brasil 2233, Centro, Goiânia"
-        },
-        {
-          id: "3456",
-          social: "Conexa Hub de Inovação 4",
-          cnpj: "342.454.0001-76",
-          address: "Av Brasil 2233, Centro, Goiânia"
-        },
-        // {
-        //   id: "7890",
-        //   social: "Conexa Hub de Inovação 5",
-        //   cnpj: "342.454.0001-76",
-        //   address: "Av Brasil 2233, Centro, Goiânia"
-        // },
-      ],
-      currentCompany: {
-        id: "1234",
-        social: "Conexa Hub de Inovação 1",
-        cnpj: "342.454.0001-76",
-        address: "Av Brasil 2233, Centro, Goiânia"
-      },
+      companies: [],
+      currentCompany: {},
       sliderList: [],
       viewportWidth: window.innerWidth,
     }
   },
 
   actions: {
-    getCompany({ commit }, cnpj) {
-      console.log(cnpj);
-      axios.get(`https://www.receitaws.com.br/v1/cnpj/${cnpj}`)
-      .then(response => commit('addCompany', response.data))
-    }
+    handleSearch({ commit, state }, keyword) {
+      var onlyDigits = keyword.match(/\d+/g).join('');
+
+      if(onlyDigits.length > 15 || onlyDigits.length < 13) {
+        // TO-DO: Notify message to user.
+        console.log("Invalid cnpj number");
+      }
+      else if(state.companies.find( ({ cnpj }) => cnpj === keyword)) {
+        commit('updateSliderPosition', keyword);
+      }
+      else {
+        axios.get(`https://www.receitaws.com.br/v1/cnpj/${onlyDigits}`)
+          .then(response => commit('handleSearchResult', response.data));
+      }
+    },
   },
 
   getters: {
@@ -60,12 +34,43 @@ const store = Vuex.createStore({
   },
 
   mutations: {
-    addCompany (state, company) {
-      console.log(company);
-      state.companies.push(company);
-      state.sliderList.push(company);
-      state.currentCompany = company;
+    initializeStore(state) {
+      var sampleData = [
+        {
+          id: "1234",
+          nome: "Conexa Hub de Inovação",
+          cnpj: "342.454.0001-76",
+          endereco: {
+            logradouro: "Av Brasil",
+            numero: "2233",
+            bairro: "Centro",
+            municipio: "Goiânia",
+            uf: "GO",
+            cep: ''
+          }
+        },
+        {
+          id: "5678",
+          nome: "Conexa Hub de Inovação",
+          cnpj: "342.454.0001-76",
+          endereco: {
+            logradouro: "Av Caiapó",
+            numero: "",
+            bairro: "",
+            municipio: "Goiânia",
+            uf: "GO",
+            cep: ''
+          }
+        },
+      ];
+
+      const companies       = localStorage.getItem('companies');
+      const currentCompany  = localStorage.getItem('currentCompany');
+
+      state.companies = companies ? JSON.parse(companies) : sampleData;
+      state.currentCompany = currentCompany ? JSON.parse(currentCompany) : sampleData[0];
     },
+
     generateSliderList(state) {
       var vw = state.viewportWidth;         // TO-DO: find properly way to get an viewport value;
       var elWidth = 260;                  // TO-DO: find properly way to get an element attribute;
@@ -79,6 +84,31 @@ const store = Vuex.createStore({
 
       state.sliderList = elements.map(e => e = {...e});
     },
+
+    handleSearchResult(state, data) {
+      if(data.message) {
+        // TO-DO: Notify message to user.
+        console.log(data.message);
+        return;
+      } else {
+        store.commit('addCompany', data);
+      }
+    },
+
+    addCompany (state, data) {
+      const { nome, cnpj, logradouro, numero, bairro, municipio, uf, cep } = data;
+      const company = {
+        nome, cnpj,
+        endereco: { logradouro, numero, bairro, municipio, uf, cep },
+      }
+
+      store.commit('updateSliderList', company);
+      state.companies.push(company);
+      state.currentCompany = company;
+      localStorage.setItem('companies', JSON.stringify(state.companies));
+      localStorage.setItem('currentCompany', JSON.stringify(state.currentCompany));
+    },
+
     rotateListLeft(state) {
       state.sliderList.push(state.sliderList.shift());
     },
@@ -88,5 +118,20 @@ const store = Vuex.createStore({
     shuffle(state) {
       state.sliderList = _.shuffle(state.sliderList);
     },
+    updateSliderList(state, element) {
+      const N = state.companies.length;
+      const L = state.sliderList.length;
+
+      for(let i = L-1; i > 0; i -= N) {
+        state.sliderList.splice(i, 0, {...element});
+      }
+    },
+    updateSliderPosition(state, cnpj) {
+      const middle = state.sliderList.length / 2;
+
+      while(state.sliderList[middle].cnpj != cnpj) {
+        store.commit('rotateListLeft');
+      }
+    }
   }
 })

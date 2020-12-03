@@ -9,9 +9,9 @@ app.component('Slider', {
           class="element"
           :class="elementVisibility(index)"
           :key="company"
-          :social="company.social"
+          :nome="company.nome"
           :cnpj="company.cnpj"
-          :address="company.address"
+          :endereco="company.endereco"
         />
       </transition-group>
 
