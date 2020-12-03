@@ -24,11 +24,15 @@ const store = Vuex.createStore({
           .then(response => commit('handleSearchResult', response.data));
       }
     },
+
+    selectCompany({ commit }, cnpj) {
+      commit('setCurrentCompany', cnpj);
+    }
   },
 
   getters: {
     allCompanies: (state) => state.companies,
-    company: (state, cnpj) => state.companies.find(cnpj),
+    company: (state, cnpj) => state.companies.find(company => company.cnpj === cnpj),
     companiesCount: (state) => state.companies.length,
     sliderListSize: (state) => state.sliderList.length,
   },
@@ -39,8 +43,8 @@ const store = Vuex.createStore({
         {
           id: "1234",
           name: "Conexa Hub de Inovação",
-          cnpj: "342.454.0001-76",
-          cnpjNumber: "342454000176",
+          cnpj: "342.454.0001-75",
+          cnpjNumber: "342454000175",
           endereco: {
             logradouro: "Av Brasil",
             numero: "2233",
@@ -89,7 +93,7 @@ const store = Vuex.createStore({
       state.sliderList = elements.map(e => e = {...e});
     },
 
-    handleSearchResult(state, data) {
+    handleSearchResult(_state, data) {
       if(data.message) {
         // TO-DO: Notify message to user.
         console.log(data.message);
@@ -99,7 +103,7 @@ const store = Vuex.createStore({
       }
     },
 
-    addCompany (state, data) {
+    addCompany(state, data) {
       const { nome, cnpj, logradouro, numero, bairro, municipio, uf } = data;
       const company = {
         cnpj,
@@ -123,15 +127,23 @@ const store = Vuex.createStore({
       localStorage.setItem('currentCompany', JSON.stringify(state.currentCompany));
     },
 
+    setCurrentCompany(state, cnpj) {
+      state.currentCompany = state.companies.find(company => company.cnpj === cnpj);
+      localStorage.setItem('currentCompany', JSON.stringify(state.currentCompany));
+    },
+
     rotateListLeft(state) {
       state.sliderList.push(state.sliderList.shift());
     },
+
     rotateListRight(state) {
       state.sliderList.unshift(state.sliderList.pop());
     },
+
     shuffle(state) {
       state.sliderList = _.shuffle(state.sliderList);
     },
+
     updateSliderList(state, element) {
       const N = state.companies.length;
       const L = state.sliderList.length;
@@ -140,6 +152,7 @@ const store = Vuex.createStore({
         state.sliderList.splice(i, 0, {...element});
       }
     },
+
     updateSliderPosition(state, cnpj) {
       const middle = state.sliderList.length / 2;
 

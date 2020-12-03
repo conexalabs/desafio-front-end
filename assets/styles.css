@@ -219,6 +219,7 @@ html, body {
   font-size: 16px;
 }
 .slider-element {
+  cursor: pointer;
   margin: 1rem;
 }
 .slider-element-active {

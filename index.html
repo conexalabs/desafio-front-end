@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://hubconexa.com/wp-content/themes/conexa/assets/images/favicon.ico" rel="shortcut icon"
@@ -38,6 +37,7 @@
           :name="element.name"
           :cnpj="element.cnpj"
           :address="element.address"
+          @click="openMap(element.cnpj)"
           />
         </slider>
       </div>
