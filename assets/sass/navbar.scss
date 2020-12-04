@@ -1,0 +1,55 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 15.2em;
+  max-height: 15.2em;
+  padding: 1.8em 0;
+  margin-bottom: 6rem;
+  color: $color-navbar;
+  background-color: $color-white;
+
+  &-brand {
+    font-size: 0.9em;
+    margin-right: 0.22em;
+  }
+
+  &-button {
+    border-color: $color-navbar;
+    background-color: $color-navbar;
+    color: $color-white;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: $color-green-dark;
+      background-color: $color-green-dark;
+    }
+    &:active {
+      border-color: $color-green-darker;
+      background-color: $color-green-darker;
+    }
+    &:focus { outline: unset; }
+  }
+
+  &-form {
+    color: $color-navbar;
+    border-color: $color-navbar;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    font-size: 1.78vw;
+    margin-bottom: 10vw;
+  }
+}
+
+@media (max-width: 630px) {
+  .navbar {
+    box-sizing: content-box;
+    font-size: 11px;
+    max-height: unset;
+  }
+}

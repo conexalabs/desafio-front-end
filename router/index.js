@@ -1,13 +1,12 @@
-const { components } = app._context;
+const router = function() {
+  const routerHistory = VueRouter.createWebHashHistory();
+  const { Home, GoogleMaps } = app._context.components;
 
-const Home = { template: `<div></div>` }
-const GoogleMaps = components.GoogleMaps;
-const routerHistory = VueRouter.createWebHashHistory();
-
-const router = VueRouter.createRouter({
-  history: routerHistory,
-  routes: [
-    { path: '/', component: Home },
-    { path: '/location', component: GoogleMaps },
-  ],
-})
+  return VueRouter.createRouter({
+    history: routerHistory,
+    routes: [
+      { path: '/', component: Home },
+      { path: '/location', component: GoogleMaps },
+    ],
+  })
+}();

@@ -1,15 +1,13 @@
 .slider-list{
   &-move {
-    transition: transform 0.8s ease, opacity 0.6s ease 0.8s;
+    pointer-events: none;
+    transition: transform 0.6s linear, opacity 0.3s ease-in 0.3s;
   }
 
   &-enter-active, &-leave-active {
-    transition: all 1s;
+    transition: all 0.4s linear;
     pointer-events: none;
   }
 
-  &-enter, &-leave-to {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+  &-enter, &-leave-to { opacity: 0; }
 }

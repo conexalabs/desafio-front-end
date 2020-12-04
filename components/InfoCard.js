@@ -11,7 +11,7 @@ app.component('InfoCard', {
     <div class="card-inner">
       <div v-if="isInsideMaps" class="card-header">
         <router-link to="/">
-          <button class="button card-header-button card-header-left">
+          <button class="button card-header-button">
             <span class="fa-stack">
               <i class="far fa-circle fa-stack-2x"></i>
               <i class="fas fa-arrow-left fa-stack-1x"></i>
@@ -25,7 +25,7 @@ app.component('InfoCard', {
         <span class="item-content">{{ name }}</span>
       </div>
 
-      <div class="card-item item">
+      <div class="card-item item card-priority">
         <span class="item-label">CNPJ</span>
         <span class="item-content">{{ cnpj }}</span>
       </div>
@@ -36,6 +36,7 @@ app.component('InfoCard', {
       </div>
     </div>
   </div>`,
+
   computed: {
     isInsideMaps() {
       return this.cardType === 'maps';

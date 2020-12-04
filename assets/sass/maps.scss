@@ -1,10 +1,8 @@
 
 .maps {
-
   &-canvas {
     position: fixed !important;
     width: 100%;
-    /*height: calc(100% - 14.8rem);*/
     height: 100%;
     margin: 0;
     padding: 0;
@@ -15,23 +13,48 @@
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 10;
+    height: unset;
     max-height: unset;
     padding-left: 0.5rem;
     margin: 0;
     border-radius: 0;
     border-bottom-right-radius: 0.75rem;
     box-shadow: 4px 5px 8px 3px rgba(0, 0, 0, 0.3);
-
-    z-index: 10;
   }
 
   &-label {
     position: relative;
     left: 6em;
-    /* top: 8px; */
     max-width: 10em;
     text-align: start;
     white-space: normal;
     line-height: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .maps {
+
+    .card {
+      width: 14rem;
+      max-width: unset;
+      min-width: unset;
+
+      &-inner {
+        flex-direction: row;
+        padding: 0.25rem 0.75rem;
+        align-items: center;
+      }
+
+      &-header, &-item { margin: 0; }
+      &-header { margin-left: -0.25rem; }
+      &-item { display: none; }
+
+      &-priority {
+        display: flex;
+        margin-top: 0.25rem;
+      }
+    }
   }
 }

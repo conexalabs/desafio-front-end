@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 35em;
+
+  &-inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-color: inherit;
+  }
+
+  &-input {
+    flex-grow: 1;
+    font-size: 1.25em;
+    height: 3.2em;
+    margin-right: 1.6em;
+    padding: 0.8em;
+    background-color: $color-white;
+    border-color: inherit;
+    border-radius: 0.25em;
+    border-style: solid;
+    border-width: 2px;
+
+    &-error { border-color: $color-red-1; }
+    &::placeholder { color: $color-grey; }
+  }
+
+  &-message {
+    font-size: 0.75rem;
+    margin: 0 0.0625rem;
+    max-width: 20em;
+    line-height: 1.25em;
+    text-align: start;
+    white-space: normal;
+    color: $color-grey-1;
+
+    &-error { color: $color-red-1; }
+  }
+}
+
+@media (max-width: 420px) {
+  .form {
+    width: 100%;
+    margin: 0 8px;
+
+    &-input { margin-right: 16px; }
+  }
+}

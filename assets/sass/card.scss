@@ -1,17 +1,12 @@
-
 .card {
   box-sizing: border-box;
   width: 16.25rem;
   min-width: 16.25rem;
+  height: 15rem;
   max-height: 15rem;
   border-radius: 0.75rem;
   background: $color-white;
-
   transition: opacity 1.25s;
-
-  &-active {
-    opacity: 1;
-  }
 
   &-header {
     margin-bottom: 1.2rem;
@@ -20,14 +15,20 @@
     &-button {
       padding: 0;
       z-index: 10;
-
+      height: 3.25rem;
+      width: 3.25rem;
       background-color: transparent;
       border: none;
       border-radius: 50%;
-    }
-
-    &-left{
+      transition: all 0.1s ease;
       margin-left: -0.5rem;
+
+      &:hover { background-color: rgba($color: $color-grey, $alpha: 0.1); }
+      &:active { background-color: rgba($color: $color-grey, $alpha: 0.2); }
+      &:focus {
+        outline: unset;
+        background-color: rgba($color: $color-grey, $alpha: 0.1);
+      }
     }
   }
 
@@ -35,14 +36,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     height: calc(100% - 1.8rem);
     padding: 1.2rem 1rem 0.6rem;
   }
 
   &-item {
     flex-direction: column-reverse;
-
     color: $color-primary;
   }
 }

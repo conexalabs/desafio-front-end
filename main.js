@@ -1,25 +1,17 @@
 const app = Vue.createApp({
   beforeCreate(){
-    this.$store.commit('initializeStore');
+    this.$store.dispatch('initialize');
   },
   created() {
-    this.$store.commit('generateSliderList');
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
   },
-  data() {
-    return {
-      title: 'Localizador de Empresas',
-    }
-  },
-  computed: {
-    ...Vuex.mapState([
-      'companies',
-      'sliderList'
-    ]),
+  unmounted() {
+    window.removeEventListener('resize', this.handleResize);
   },
   methods: {
-    openMap(cnpj) {
-      this.$store.dispatch('selectCompany', cnpj);
-      this.$router.push('/location');
-    }
+    handleResize() {
+      this.$store.dispatch('updateViewportWidth', window.innerWidth);
+    },
   }
 })
