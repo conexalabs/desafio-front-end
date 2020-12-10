@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://hubconexa.com/wp-content/themes/conexa/assets/images/favicon.ico" rel="shortcut icon"
+    type="image/x-icon">
+
+    <title>[Testes] Desafio Front-End Developer ConexaLabs</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+  <script src="https://unpkg.com/chai/chai.js"></script>
+  <script src="https://unpkg.com/mocha/mocha.js"></script>
+</head>
+
+<body>
+  <div id="mocha"></div>
+
+  <script>
+    mocha.setup('bdd');
+    let assert = chai.assert;
+  </script>
+
+  <script src="../helpers/cnpjValidator.js"></script>
+  <script src="./test.cnpjValidator.js"></script>
+
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>

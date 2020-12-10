@@ -1,11 +1,12 @@
 app.component('InfoCard', {
   props: {
-    id: String,
+    id: Number,
     address: String,
     cnpj: String,
     name: String,
     cardType: String,
   },
+
   template: /*html*/
   `<div class="card" :class="{ 'maps-card' : isInsideMaps }">
     <div class="card-inner">
@@ -27,7 +28,7 @@ app.component('InfoCard', {
 
       <div class="card-item item card-priority">
         <span class="item-label">CNPJ</span>
-        <span class="item-content">{{ cnpj }}</span>
+        <span class="item-content" :class="{ 'item-highlighted' : found }">{{ cnpj }}</span>
       </div>
 
       <div class="card-item item">
@@ -38,8 +39,14 @@ app.component('InfoCard', {
   </div>`,
 
   computed: {
+    ...Vuex.mapGetters([
+      'lastSearched'
+    ]),
     isInsideMaps() {
       return this.cardType === 'maps';
+    },
+    found() {
+      return !this.isInsideMaps && this.lastSearched;
     },
   },
 })

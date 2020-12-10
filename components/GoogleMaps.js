@@ -52,7 +52,7 @@ app.component('GoogleMaps', {
       const { OPTIONAL_AND_HIDES_LOWER_PRIORITY, REQUIRED_AND_HIDES_OPTIONAL } = google.maps.CollisionBehavior;
 
 
-      let marker = new google.maps.Marker({
+      new google.maps.Marker({
         position: coordinates,
         map: map,
         collisionBehavior: OPTIONAL_AND_HIDES_LOWER_PRIORITY,

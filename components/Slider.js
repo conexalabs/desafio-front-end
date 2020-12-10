@@ -155,10 +155,12 @@ app.component('Slider', {
 
     rotateSliderLeft() {
       this.sliderList.push(this.sliderList.shift());
+      this.rotateQueueLeft();
     },
 
     rotateSliderRight() {
       this.sliderList.unshift(this.sliderList.pop());
+      this.rotateQueueRight();
     },
 
     updateSliderList(element) {

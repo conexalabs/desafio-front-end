@@ -37,7 +37,7 @@ app.component('Home', {
   data() {
     return {
       title: 'Localizador de Empresas',
-      firstSearchImagePath: '/assets/images/search_image.png',
+      firstSearchImagePath: 'assets/images/search_image.png',
       firstSearchMessage: 'Localize acima a primeira empresa',
       cardWidth: 292,
     }

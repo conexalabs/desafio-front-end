@@ -15,10 +15,10 @@ app.component('TheNavbar', {
       </span>
 
       <div class="form-inline">
-        <input class="form-input" type="search" placeholder="012.345.678/1000-90 "
+        <input class="form-input" type="search" placeholder="12.345.678/1000-90 "
           v-model="cnpj"
           :class="{ 'form-input-error' : isError }"
-          :maxlength="19"
+          :maxlength="18"
         >
         <button class="button button-pill button-primary navbar-button" type="submit" >Localizar</button>
       </div>

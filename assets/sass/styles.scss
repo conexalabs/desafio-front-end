@@ -77,6 +77,8 @@ html, body {
     order: 2;
     font-weight: 600;
   }
+
+  &-highlighted { background-color: $color-grey-2; }
 }
 
 .panel {

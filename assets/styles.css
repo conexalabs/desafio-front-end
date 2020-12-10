@@ -75,6 +75,9 @@ html, body {
   order: 2;
   font-weight: 600;
 }
+.item-highlighted {
+  background-color: #e5efea;
+}
 
 .panel {
   box-sizing: border-box;
