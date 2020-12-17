@@ -1,0 +1,31 @@
+a {
+  text-decoration: none;
+
+  div.card {
+    height: 270px;
+    width: 300px;
+    background-color: #ffffff;
+    color: #0b938f;
+    border-radius: 10px;
+    margin: 20px;
+    transition: background-color 0.2s;
+
+    > div {
+      padding: 18px 0 8px 18px;
+
+      p {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      span {
+        font-size: 16px;
+        padding-top: 4px;
+        display: block;
+      }
+    }
+    &:hover {
+      background-color: #e0e0e0f7;
+    }
+  }
+}
