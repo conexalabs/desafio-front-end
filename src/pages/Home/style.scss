@@ -1,6 +1,6 @@
 $base-color: #3a8970;
-$small: 300px;
-$medium: 900px;
+$small: 600px;
+$medium: 806px;
 
 .wrapper {
   display: grid;
@@ -9,6 +9,10 @@ $medium: 900px;
   grid-gap: 10px;
   width: 100vw;
   height: 100vh;
+
+  @media screen and (max-width: $medium) {
+    grid-template-rows: repeat(4, 1fr);
+  }
 
   .container-localizator {
     grid-column: 1/6;
@@ -85,6 +89,98 @@ $medium: 900px;
         }
       }
     }
+
+    @media screen and (max-width: $medium) {
+      div.header {
+        p {
+          font-size: 42px;
+          font-weight: "regular";
+        }
+
+        svg {
+          width: 42px;
+          height: 42px;
+          margin-right: 17px;
+        }
+      }
+
+      form {
+        display: flex;
+        padding-top: 40px;
+
+        div.input {
+          input {
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 300px;
+            padding: 20px;
+
+            &:hover,
+            &:focus {
+              border: 2px solid $base-color;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: $small) {
+      div.header {
+        p {
+          font-size: 22px;
+          font-weight: bold;
+        }
+
+        svg {
+          width: 22px;
+          height: 22px;
+          margin-right: 17px;
+        }
+      }
+
+      form {
+        display: flex;
+        padding-top: 20px;
+        align-items: center;
+
+        div.input {
+          input {
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 220px;
+            padding: 10px;
+
+            &:hover,
+            &:focus {
+              border: 2px solid $base-color;
+            }
+          }
+        }
+
+        button {
+          align-items: center;
+          background-color: $base-color;
+          border: none;
+          border-radius: 30px;
+          color: #fff;
+          font-size: 16px;
+          font-weight: bold;
+          margin-left: 8px;
+          padding: 12px;
+          text-align: center;
+          transition: background-color 0.2s;
+          height: 40px;
+          width: 120px;
+
+          &:hover,
+          &:active {
+            background-color: #4c9278;
+          }
+        }
+      }
+    }
   }
 
   .container-cards {
@@ -137,4 +233,8 @@ $medium: 900px;
       margin-right: 40px !important;
     }
   }
+}
+
+@media screen and (max-width: $small) {
+  //do Smth
 }

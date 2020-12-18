@@ -1,3 +1,5 @@
+$small: 600px;
+
 .rec {
   .rec-item-wrapper {
     width: 340px;
@@ -11,7 +13,7 @@
     background-color: transparent;
     box-shadow: none;
     color: #fff;
-    margin-right: 40px;
+    margin-left: 40px;
     font-size: 32px;
 
     &:hover {
@@ -24,6 +26,16 @@
       border: none !important;
       background-color: transparent !important;
       box-shadow: none !important;
+    }
+  }
+
+  @media screen and (max-width: $small) {
+    .rec-arrow-left {
+      margin-left: 0px;
+    }
+
+    .rec-arrow-right {
+      margin-right: 0px !important;
     }
   }
 
