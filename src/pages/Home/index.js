@@ -11,7 +11,7 @@ import { createAddress } from "../../utils";
 import PeopleSearch from "../../assets/people_search.svg";
 import "./style.scss";
 
-const Home = () => {
+function Home() {
   const [cnpj, setCnpj] = useState("");
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
@@ -103,6 +103,6 @@ const Home = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Home;

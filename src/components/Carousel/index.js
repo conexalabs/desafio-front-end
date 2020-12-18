@@ -1,10 +1,9 @@
 import React from "react";
+import Carousel, { consts } from "react-elastic-carousel";
 
 import Card from "../Card";
 
 import "./style.scss";
-
-import Carousel, { consts } from "react-elastic-carousel";
 
 function CarouselComponent({ cards }) {
   return (

@@ -5,7 +5,7 @@ import MapComponent from "../../components/Map";
 import { Link, useLocation } from "react-router-dom";
 import "./style.scss";
 
-const Localization = () => {
+function Localization() {
   const [company, setCompany] = useState({});
   const data = useLocation();
 
@@ -40,7 +40,10 @@ const Localization = () => {
           <span>Endereço</span>
         </div>
       </div>
-      <MapComponent address={company.address} isAdding={true} />
+      <MapComponent
+        address={company.address}
+        nameCompany={company.companyName}
+      />
     </div>
   );
 };

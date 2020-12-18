@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { titleCase } from "../../utils";
 import "./style.scss";
 
-const Card = ({ companyName, cnpj, address }, props) => {
+function Card({ companyName, cnpj, address }, props) {
   return (
     <Link
       to={{
@@ -30,6 +30,6 @@ const Card = ({ companyName, cnpj, address }, props) => {
       </div>
     </Link>
   );
-};
+}
 
 export default Card;

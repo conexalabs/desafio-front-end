@@ -6,8 +6,9 @@ import { App } from "../../config/index.json";
 
 Geocode.setApiKey(App.GoogleMap.api);
 
-export const MapContainer = ({ address }) => {
+function MapContainer({ address, nameCompany }) {
   const [currentPosition, setCurrentPosition] = useState({});
+  const [name, setName] = useState("");
 
   const mapStyles = {
     height: "100vh",
@@ -23,14 +24,14 @@ export const MapContainer = ({ address }) => {
 
   useEffect(() => {
     if (address && address !== SEM_ENDERECO) {
-      console.log(address);
       Geocode.fromAddress(address).then((response) => {
         const { lat, lng } = response.results[0].geometry.location;
 
         setCurrentPosition({ lat, lng });
+        setName(nameCompany);
       });
     }
-  }, [address, setCurrentPosition]);
+  }, [address, nameCompany, setName, setCurrentPosition]);
 
   return (
     <LoadScript googleMapsApiKey={App.GoogleMap.api}>
@@ -40,10 +41,19 @@ export const MapContainer = ({ address }) => {
         draggable={false}
         center={currentPosition.lat ? currentPosition : defaultCenter}
       >
-        {currentPosition.lat && <Marker position={currentPosition} />}
+        {currentPosition.lat && (
+          <Marker
+            position={currentPosition}
+            label={{
+              text: name,
+              color: "#C70E20",
+              fontWeight: "bold",
+            }}
+          />
+        )}
       </GoogleMap>
     </LoadScript>
   );
-};
+}
 
 export default MapContainer;
