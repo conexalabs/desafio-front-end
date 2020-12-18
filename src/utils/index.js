@@ -1,4 +1,6 @@
 export function titleCase(string) {
+  if (!string) return string;
+
   return string
     .toLowerCase()
     .split(" ")
