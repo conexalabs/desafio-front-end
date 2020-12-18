@@ -1,4 +1,6 @@
 $base-color: #3a8970;
+$small: 300px;
+$medium: 900px;
 
 .wrapper {
   display: grid;
@@ -34,7 +36,7 @@ $base-color: #3a8970;
       }
     }
 
-    div.input {
+    form.input {
       padding-top: 40px;
 
       input {
@@ -78,8 +80,46 @@ $base-color: #3a8970;
     background: linear-gradient(to right, #388669, #459a9e);
 
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
+
+    justify-content: center;
+    .container-people-search {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
+
+      p {
+        color: #fff;
+      }
+    }
+
+    .BrainhubCarouselItem {
+      width: 300px !important;
+      max-width: 300px !important;
+      min-width: 300px !important;
+      margin: 20px !important;
+    }
+
+    button.BrainhubCarousel__arrows {
+      background-color: transparent;
+      font-size: 20px;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    button.BrainhubCarousel__arrowLeft {
+      margin-left: 40px !important;
+    }
+
+    button.BrainhubCarousel__arrowRight {
+      margin-right: 40px !important;
+    }
   }
 }

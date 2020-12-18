@@ -1,0 +1,44 @@
+.rec {
+  .rec-item-wrapper {
+    width: 340px;
+  }
+  .rec-pagination {
+    display: none;
+  }
+
+  .rec-arrow-left {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+
+    &:hover {
+      border: none !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    &:enabled {
+      border: none !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .rec-arrow-right {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+
+    &:hover {
+      border: none !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    &:enabled {
+      border: none !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+}

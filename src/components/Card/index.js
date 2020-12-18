@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { titleCase } from "../../utils";
 import "./style.scss";
 
-function Card({ social, cnpj, address }) {
+function Card({ companyName, cnpj, address }) {
   return (
     <Link to="/localization" style={{ textDecoration: "none" }}>
-      <div class="card">
+      <div className="card">
         <div>
-          <p>{social}</p>
+          <p>{titleCase(companyName)}</p>
           <span>Razão social</span>
         </div>
 
@@ -18,7 +18,7 @@ function Card({ social, cnpj, address }) {
         </div>
 
         <div>
-          <p>{address}</p>
+          <p>{titleCase(address)}</p>
           <span>Endereço</span>
         </div>
       </div>
