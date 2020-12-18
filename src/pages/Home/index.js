@@ -1,12 +1,13 @@
 import React, { useCallback, useState, useEffect } from "react";
-import { uuid } from "uuidv4";
+import axios from "axios";
 import { FaBuilding } from "react-icons/fa";
 import { cnpj as validateCNPJ } from "cpf-cnpj-validator";
-import axios from "axios";
+import InputMask from "react-input-mask";
 
 import { useCompany } from "../../hooks/company";
 import CarouselComponent from "../../components/Carousel";
 import { createAddress } from "../../utils";
+
 import PeopleSearch from "../../assets/people_search.svg";
 import "./style.scss";
 
@@ -44,7 +45,6 @@ const Home = () => {
       const address = createAddress(response.data);
 
       const newCompany = {
-        key: uuid(),
         companyName: nome,
         cnpj,
         address,
@@ -67,7 +67,8 @@ const Home = () => {
         </div>
 
         <form className="input" onSubmit={handleSubmit}>
-          <input
+          <InputMask
+            mask="99.999.999/9999-99"
             type="text"
             placeholder="CNPJ..."
             value={cnpj}
