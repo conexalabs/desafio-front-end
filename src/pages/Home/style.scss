@@ -22,7 +22,7 @@ $medium: 900px;
 
     div.header {
       display: flex;
-      color: #3a8970;
+      color: $base-color;
       justify-content: center;
       align-items: center;
 
@@ -36,24 +36,37 @@ $medium: 900px;
       }
     }
 
-    form.input {
+    form {
+      display: flex;
       padding-top: 40px;
 
-      input {
-        width: 400px;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        font-size: 20px;
-        padding: 20px;
+      div.input {
+        flex-direction: column;
 
-        &:hover,
-        &:focus {
-          border: 2px solid #3a8970;
+        span {
+          color: #87040a;
+          display: block;
+          font-weight: bold;
+          padding-top: 4px;
+        }
+
+        input {
+          border: 2px solid #ccc;
+          border-radius: 4px;
+          font-size: 20px;
+          width: 400px;
+          padding: 20px;
+
+          &:hover,
+          &:focus {
+            border: 2px solid $base-color;
+          }
         }
       }
 
       button {
-        background-color: #3a8970;
+        align-items: center;
+        background-color: $base-color;
         border: none;
         border-radius: 30px;
         color: #fff;
@@ -63,6 +76,8 @@ $medium: 900px;
         padding: 15px 32px;
         text-align: center;
         transition: background-color 0.2s;
+        height: 55px;
+        width: 170px;
 
         &:hover,
         &:active {

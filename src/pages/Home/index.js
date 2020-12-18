@@ -13,6 +13,8 @@ import "./style.scss";
 
 const Home = () => {
   const [cnpj, setCnpj] = useState("");
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false);
   const [cards, setCards] = useState([]);
 
   const { addCompany, getCompanies } = useCompany();
@@ -28,7 +30,8 @@ const Home = () => {
       const cnpjIsValid = validateCNPJ.isValid(cnpj);
 
       if (!cnpjIsValid) {
-        console.log("Error");
+        setError(true);
+        setErrorMessage("CNPJ inválido!");
         return;
       }
 
@@ -38,7 +41,13 @@ const Home = () => {
         `https://cors-anywhere.herokuapp.com/http://www.receitaws.com.br/v1/cnpj/${cnpjWithoutMask}`
       );
 
-      console.log(response.data);
+      const { status, message } = response.data;
+
+      if (status === "ERROR") {
+        setError(true);
+        setErrorMessage(message);
+        return;
+      }
 
       const { nome, cep } = response.data;
 
@@ -53,6 +62,8 @@ const Home = () => {
 
       addCompany(newCompany);
       setCards(getCompanies);
+      setError(false);
+      setErrorMessage("");
       setCnpj("");
     },
     [cnpj, setCards, setCnpj, addCompany, getCompanies]
@@ -66,14 +77,17 @@ const Home = () => {
           <p>Localizador de Empresas</p>
         </div>
 
-        <form className="input" onSubmit={handleSubmit}>
-          <InputMask
-            mask="99.999.999/9999-99"
-            type="text"
-            placeholder="CNPJ..."
-            value={cnpj}
-            onChange={(e) => setCnpj(e.target.value)}
-          />
+        <form onSubmit={handleSubmit}>
+          <div className="input">
+            <InputMask
+              mask="99.999.999/9999-99"
+              type="text"
+              placeholder="CNPJ..."
+              value={cnpj}
+              onChange={(e) => setCnpj(e.target.value)}
+            />
+            {error && <span> {errorMessage}</span>}
+          </div>
           <button type="submit">LOCALIZAR</button>
         </form>
       </div>
