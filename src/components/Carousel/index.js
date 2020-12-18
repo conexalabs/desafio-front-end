@@ -15,7 +15,7 @@ function CarouselComponent({ cards }) {
     >
       {cards.map((card) => (
         <Card
-          key={card.key}
+          key={card.cnpj}
           companyName={card.companyName}
           cnpj={card.cnpj}
           address={card.address}
