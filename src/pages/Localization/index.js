@@ -13,6 +13,8 @@ const Localization = () => {
     setCompany(data.state);
   }, [setCompany, data]);
 
+  if (!company) return;
+
   return (
     <div>
       <div className="card-map">
@@ -24,7 +26,7 @@ const Localization = () => {
           <FaRegArrowAltCircleLeft size={32} />
         </Link>
         <div>
-          <p>{company.companyName}</p>
+          <p>{titleCase(company.companyName)}</p>
           <span>Razão social</span>
         </div>
 
@@ -34,7 +36,7 @@ const Localization = () => {
         </div>
 
         <div>
-          <p>{company.address}</p>
+          <p>{titleCase(company.address)}</p>
           <span>Endereço</span>
         </div>
       </div>
