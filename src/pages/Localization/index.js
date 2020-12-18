@@ -1,36 +1,46 @@
-import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import React, { useState, useEffect } from "react";
+import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+import { titleCase } from "../../utils";
+import MapComponent from "../../components/Map";
+import { Link, useLocation } from "react-router-dom";
+import "./style.scss";
 
-const stores = [
-  { latitude: -26.9853947, longitude: -52.603549, local: "Cordilheira Alta" },
-  { latitude: -26.9605363, longitude: -52.5335505, local: "Xaxim" },
-];
+const Localization = () => {
+  const [company, setCompany] = useState({});
+  const data = useLocation();
 
-export class Localization extends Component {
-  render() {
-    return (
-      <Map
-        google={this.props.google}
-        zoom={13}
-        initialCenter={{ lat: -27.0922364, lng: -52.6166878 }}
-      >
-        {stores.map((store, index) => {
-          return (
-            <Marker
-              key={index}
-              id={index}
-              position={{
-                lat: store.latitude,
-                lng: store.longitude,
-              }}
-            />
-          );
-        })}
-      </Map>
-    );
-  }
-}
+  useEffect(() => {
+    setCompany(data.state);
+  }, [setCompany, data]);
 
-export default GoogleApiWrapper((props) => ({
-  apiKey: "",
-}))(Localization);
+  return (
+    <div>
+      <div className="card-map">
+        <Link
+          to={{
+            pathname: "/",
+          }}
+        >
+          <FaRegArrowAltCircleLeft size={32} />
+        </Link>
+        <div>
+          <p>{company.companyName}</p>
+          <span>Razão social</span>
+        </div>
+
+        <div>
+          <p>{company.cnpj}</p>
+          <span>CNPJ</span>
+        </div>
+
+        <div>
+          <p>{company.address}</p>
+          <span>Endereço</span>
+        </div>
+      </div>
+      <MapComponent address={company.address} isAdding={true} />
+    </div>
+  );
+};
+
+export default Localization;

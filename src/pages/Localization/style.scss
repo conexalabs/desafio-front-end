@@ -1,0 +1,33 @@
+.card-map {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 280px;
+  z-index: 99999;
+  background-color: #ffffff;
+  color: #0b938f;
+  transition: background-color 0.2s;
+  border-bottom-right-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 4px 4px 4px;
+
+  svg {
+    margin: 16px 0 0 15px;
+    color: #0b938f;
+  }
+
+  div {
+    padding: 18px 0 8px 18px;
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    span {
+      font-size: 16px;
+      padding-top: 4px;
+      display: block;
+    }
+  }
+}

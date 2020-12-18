@@ -3,9 +3,15 @@ import { Link } from "react-router-dom";
 import { titleCase } from "../../utils";
 import "./style.scss";
 
-function Card({ companyName, cnpj, address }) {
+const Card = ({ companyName, cnpj, address }, props) => {
   return (
-    <Link to="/localization" style={{ textDecoration: "none" }}>
+    <Link
+      to={{
+        pathname: "/localization",
+        state: { companyName, cnpj, address },
+      }}
+      style={{ textDecoration: "none" }}
+    >
       <div className="card">
         <div>
           <p>{titleCase(companyName)}</p>
@@ -24,6 +30,6 @@ function Card({ companyName, cnpj, address }) {
       </div>
     </Link>
   );
-}
+};
 
 export default Card;
