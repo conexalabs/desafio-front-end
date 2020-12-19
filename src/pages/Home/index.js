@@ -38,7 +38,7 @@ function Home() {
       const cnpjWithoutMask = cnpj.replace(/[^\d]+/g, "");
 
       const response = await axios.get(
-        `https://cors-anywhere.herokuapp.com/http://www.receitaws.com.br/v1/cnpj/${cnpjWithoutMask}`
+        `https://www.receitaws.com.br/v1/cnpj/${cnpjWithoutMask}`
       );
 
       const { status, message } = response.data;
