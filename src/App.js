@@ -9,9 +9,6 @@ import './css/styled.scss'
 import Header from './components/header'
 import Map from './components/map'
 
-// const path = process.env.NODE_ENV === "development" ?
-// 	process.env.REACT_APP_URL_LOCAL : process.env.REACT_APP_URL_PUBLIC
-
 function App() {
 	return (
 		<BrowserRouter>
