@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/localizador-empresas/static/css/main.0d2c163b.chunk.css",
-    "main.js": "/localizador-empresas/static/js/main.006b7d80.chunk.js",
-    "main.js.map": "/localizador-empresas/static/js/main.006b7d80.chunk.js.map",
-    "runtime-main.js": "/localizador-empresas/static/js/runtime-main.f1374313.js",
-    "runtime-main.js.map": "/localizador-empresas/static/js/runtime-main.f1374313.js.map",
-    "static/css/2.829c9cb5.chunk.css": "/localizador-empresas/static/css/2.829c9cb5.chunk.css",
-    "static/js/2.413fe01a.chunk.js": "/localizador-empresas/static/js/2.413fe01a.chunk.js",
-    "static/js/2.413fe01a.chunk.js.map": "/localizador-empresas/static/js/2.413fe01a.chunk.js.map",
-    "index.html": "/localizador-empresas/index.html",
-    "precache-manifest.6f7134cec9f9898149bcfaae93aa97ea.js": "/localizador-empresas/precache-manifest.6f7134cec9f9898149bcfaae93aa97ea.js",
-    "service-worker.js": "/localizador-empresas/service-worker.js",
-    "static/css/2.829c9cb5.chunk.css.map": "/localizador-empresas/static/css/2.829c9cb5.chunk.css.map",
-    "static/css/main.0d2c163b.chunk.css.map": "/localizador-empresas/static/css/main.0d2c163b.chunk.css.map",
-    "static/js/2.413fe01a.chunk.js.LICENSE.txt": "/localizador-empresas/static/js/2.413fe01a.chunk.js.LICENSE.txt"
+    "main.css": "/desafio-front-end/static/css/main.47cdf117.chunk.css",
+    "main.js": "/desafio-front-end/static/js/main.2d1dfb06.chunk.js",
+    "main.js.map": "/desafio-front-end/static/js/main.2d1dfb06.chunk.js.map",
+    "runtime-main.js": "/desafio-front-end/static/js/runtime-main.d4bc274e.js",
+    "runtime-main.js.map": "/desafio-front-end/static/js/runtime-main.d4bc274e.js.map",
+    "static/css/2.829c9cb5.chunk.css": "/desafio-front-end/static/css/2.829c9cb5.chunk.css",
+    "static/js/2.d58702c2.chunk.js": "/desafio-front-end/static/js/2.d58702c2.chunk.js",
+    "static/js/2.d58702c2.chunk.js.map": "/desafio-front-end/static/js/2.d58702c2.chunk.js.map",
+    "index.html": "/desafio-front-end/index.html",
+    "precache-manifest.953f184f099b8507a79ae8d5119298cb.js": "/desafio-front-end/precache-manifest.953f184f099b8507a79ae8d5119298cb.js",
+    "service-worker.js": "/desafio-front-end/service-worker.js",
+    "static/css/2.829c9cb5.chunk.css.map": "/desafio-front-end/static/css/2.829c9cb5.chunk.css.map",
+    "static/css/main.47cdf117.chunk.css.map": "/desafio-front-end/static/css/main.47cdf117.chunk.css.map",
+    "static/js/2.d58702c2.chunk.js.LICENSE.txt": "/desafio-front-end/static/js/2.d58702c2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f1374313.js",
+    "static/js/runtime-main.d4bc274e.js",
     "static/css/2.829c9cb5.chunk.css",
-    "static/js/2.413fe01a.chunk.js",
-    "static/css/main.0d2c163b.chunk.css",
-    "static/js/main.006b7d80.chunk.js"
+    "static/js/2.d58702c2.chunk.js",
+    "static/css/main.47cdf117.chunk.css",
+    "static/js/main.2d1dfb06.chunk.js"
   ]
 }

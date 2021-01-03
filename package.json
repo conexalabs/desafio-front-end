@@ -2,7 +2,7 @@
   "name": "conexa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jadersonaires.github.io",
+  "homepage": "https://jadersonaires.github.io/desafio-front-end/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
