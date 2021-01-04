@@ -11,7 +11,7 @@ import Map from './components/map'
 
 function App() {
 	return (
-		<BrowserRouter basename={process.env.REACT_APP_URL_PUBLIC}>
+		<BrowserRouter>
 			<Switch>
 				<Route exact={true} path={`/`} component={Header}></Route>
 				<Route path={`/maps/:cidade/:uf/:cep/:endereco/:empresa/:cnpj`} component={Map}></Route>
