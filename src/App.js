@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { HashRouter, BrowserRouter, Switch, Route } from 'react-router-dom'
 
 //Css
 import 'bootstrap/dist/css/bootstrap.css'
@@ -11,12 +11,12 @@ import Map from './components/map'
 
 function App() {
 	return (
-		<BrowserRouter>
+		<HashRouter basename={process.env.REACT_APP_URL_PUBLIC}>
 			<Switch>
 				<Route exact={true} path={`/`} component={Header}></Route>
 				<Route path={`/maps/:cidade/:uf/:cep/:endereco/:empresa/:cnpj`} component={Map}></Route>
 			</Switch>
-		</BrowserRouter>
+		</HashRouter>
 	)
 }
 
