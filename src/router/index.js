@@ -1,0 +1,49 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+import * as jQuery from 'jquery'
+global.jQuery = jQuery;
+global.$ = jQuery;
+
+import Home from '@/views/Home'
+import Maps from '@/views/Maps'
+import Search from '@/views/Search'
+import DefaultPage from '@/views/DefaultPage'
+
+let router = new VueRouter({
+  routes: [
+    {
+      path: '/',
+      redirect: to => {
+        return "home"
+      },
+      component: DefaultPage,
+      children: [
+        {
+          path: 'home',
+          name: 'Home',
+          component: Home
+        },
+        {
+          path: 'search/:keyword',
+          name: 'Search',
+          component: Search,
+          props: true
+        }
+      ]
+    }, 
+    {
+      path: '/maps/:cnpj',
+      name: 'Maps',
+      component: Maps,
+      props: true
+    }
+  ]
+});
+
+Vue.use(VueRouter);
+
+export default router;
