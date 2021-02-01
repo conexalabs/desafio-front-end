@@ -1,0 +1,13 @@
+$primary-color: #3a8970;
+
+$primary-gradient: linear-gradient(to right, rgb(56,134,105), rgb(69,154,158));
+
+$text-field-outlined-fieldset-border: 2px solid $primary-color !default;
+
+.cursor-auto {
+  cursor: auto;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
