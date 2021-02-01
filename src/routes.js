@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 
 import home from './Pages/Home/home'
-// import Maps from './Pages/Maps/maps'
+import Maps from './Pages/Maps/maps'
 
 import { Provider } from 'react-redux'
 
@@ -16,7 +16,7 @@ const Routes = () => {
         <BrowserRouter>
           <Switch>
             <Route component={home} path='/' exact />
-            {/* <Route component={Maps} path='/maps' /> */}
+            <Route component={Maps} path='/maps' />
           </Switch>
         </BrowserRouter>
       </PersistGate>

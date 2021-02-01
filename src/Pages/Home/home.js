@@ -11,8 +11,6 @@ import './Styles.scss'
 const Home = () => {
   const resultCNPJ = useSelector(state => state.homeReducer.cnpj)
 
-  // console.log(Object.keys(resultCNPJ).length)
-
   const [cnpj, setCnpj] = useState({})
 
   const handleChange = (value) => {
