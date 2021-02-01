@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  margin: 0 auto;
+}
+
+body,
+input,
+button {
+  font-family: "Roboto", serif;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
