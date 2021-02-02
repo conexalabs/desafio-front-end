@@ -6,7 +6,7 @@ export default () => {
   })
   axiosInstance.interceptors.request.use(
     config => {
-      const token = process.env.TOKEN_API
+      const token = process.env.VUE_APP_TOKEN_API
       if (token) {
         config.headers.Authorization = `Bearer ${token}`
       }

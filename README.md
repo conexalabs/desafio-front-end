@@ -13,7 +13,7 @@ yarn serve
 or
 
 ```
-TOKEN_API=token yarn serve
+VUE_APP_TOKEN_API=token yarn serve
 ```
 
 ### Compiles and minifies for production
