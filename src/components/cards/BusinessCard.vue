@@ -2,7 +2,7 @@
   <v-card
     rounded="lg"
     @click="$emit('onClick')"
-    height="100%"
+    :height="!hasBackfowardButton ? '100%' : 'auto'"
     class="pb-4"
     :class="hasBackfowardButton && 'cursor-auto elevation-3'"
   >
