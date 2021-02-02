@@ -12,6 +12,7 @@
             size="2x"
             icon="arrow-circle-left"
             class="cursor-pointer"
+            @click="() => $router.push({ name: 'Home' })"
             :color="$vuetify.theme.defaults.light.primary"
           ></font-awesome-icon>
         </v-col>
@@ -19,7 +20,7 @@
       <v-row>
         <v-col>
           <v-row>
-            <v-col class="pb-0 subtitle-1 font-weight-bold">Conexão Hub de Inovação</v-col>
+            <v-col class="pb-0 subtitle-1 font-weight-bold">{{companyName}}</v-col>
           </v-row>
           <v-row class="mt-0">
             <v-col class="body-1">Razão Social</v-col>
@@ -29,7 +30,7 @@
       <v-row>
         <v-col>
           <v-row>
-            <v-col class="pb-0 subtitle-1 font-weight-bold">324.454.0001-76</v-col>
+            <v-col class="pb-0 subtitle-1 font-weight-bold">{{cnpj}}</v-col>
           </v-row>
           <v-row class="mt-0">
             <v-col class="body-1">CNPJ</v-col>
@@ -39,7 +40,7 @@
       <v-row>
         <v-col>
           <v-row>
-            <v-col class="pb-0 subtitle-1 font-weight-bold">Avenida Padre Cicero 1571</v-col>
+            <v-col class="pb-0 subtitle-1 font-weight-bold text-wrap">{{address}}</v-col>
           </v-row>
           <v-row class="mt-0">
             <v-col class="body-1">Endereço</v-col>
@@ -61,3 +62,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.text-wrap
+  word-wrap: break-word
+</style>
