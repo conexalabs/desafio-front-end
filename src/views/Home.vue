@@ -59,7 +59,7 @@
         </v-btn>
       </v-col>
       <v-col cols="10">
-        <v-row>
+        <v-row align="stretch">
           <v-col
             v-for="(business, index) in businessList"
             :key="`list-item-${index}`"
