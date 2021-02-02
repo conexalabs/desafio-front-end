@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default () => {
   const axiosInstance = axios.create({
-    baseURL: process.env.NODE_ENV === 'production' ? '' : 'https://www.receitaws.com.br/v1'
+    baseURL: 'https://www.receitaws.com.br/v1'
   })
   axiosInstance.interceptors.request.use(
     config => {
