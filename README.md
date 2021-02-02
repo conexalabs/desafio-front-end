@@ -26,5 +26,7 @@ yarn build
 yarn lint
 ```
 
+[Preview aqui](https://localizador-de-empresas.netlify.app/).
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
