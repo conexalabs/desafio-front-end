@@ -7,7 +7,6 @@ export default () => {
   axiosInstance.interceptors.request.use(
     config => {
       const token = process.env.TOKEN_API
-      console.log(token)
       if (token) {
         config.headers.Authorization = `Bearer ${token}`
       }
