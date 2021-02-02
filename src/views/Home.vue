@@ -146,6 +146,7 @@ export default {
         const resultData = (await BusinessService.search(unmaskedCNPJ)).data
         if (resultData.status === 'ERROR') {
           this.showToastMessage('error', 'Não foi possível localizar o CNPJ')
+          this.loading = false
           return
         }
         const {

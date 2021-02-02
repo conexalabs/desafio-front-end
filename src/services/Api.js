@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default () => {
   const axiosInstance = axios.create({
-    baseURL: 'https://www.receitaws.com.br/v1'
+    baseURL: 'https://cors-anywhere.herokuapp.com/https://www.receitaws.com.br/v1/'
   })
   axiosInstance.interceptors.request.use(
     config => {
