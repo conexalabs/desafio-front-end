@@ -10,6 +10,12 @@ yarn install
 yarn serve
 ```
 
+or
+
+```
+TOKEN_API=token yarn serve
+```
+
 ### Compiles and minifies for production
 ```
 yarn build
