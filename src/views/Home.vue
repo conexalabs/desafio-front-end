@@ -49,26 +49,32 @@
       </v-col>
     </v-row>
     <v-row
-      v-if="businessList.lenghth > 0"
-      class="content-section align-center justify-center px-10"
+      v-if="businessList.length > 0"
+      :class="businessList.length > 0 ? 'justify-space-between' : 'justify-center'"
+      class="content-section align-center px-10"
     >
       <v-col cols="auto">
         <v-btn icon>
           <v-icon color="white" x-large>mdi-chevron-left</v-icon>
         </v-btn>
       </v-col>
-      <v-col
-        v-for="(business, index) in 4"
-        :key="`list-item-${index}`"
-      >
-        <BusinessCard
-          @onClick="$router.push({ name: 'MapPage', params: { business } })"
-          :companyName="business.nome"
-          :cnpj="business.cnpj"
-          :address="`
-            ${business.logradouro} ${business.numero}, ${business.numero} ${business.bairro}, ${business.municipio} ${business.uf}
-          `"
-        />
+      <v-col cols="10">
+        <v-row>
+          <v-col
+            v-for="(business, index) in businessList"
+            :key="`list-item-${index}`"
+            cols="3"
+          >
+            <BusinessCard
+              @onClick="$router.push({ name: 'MapPage', params: { business } })"
+              :companyName="business.nome"
+              :cnpj="business.cnpj"
+              :address="`
+                ${business.logradouro} ${business.numero}, ${business.bairro}, ${business.municipio} ${business.uf}
+              `"
+            />
+          </v-col>
+        </v-row>
       </v-col>
       <v-col cols="auto">
         <v-btn icon>
