@@ -1,0 +1,3 @@
+export const SEARCHED_CNPJ = 'SEARCHED_CNPJ';
+
+export const COMPANIES_FOUND = 'COMPANIES_FOUND';

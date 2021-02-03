@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import { useSelector, useDispatch } from 'react-redux';
+import { searchedCnpj, companiesFound } from './store/actions';
 import './App.css';
 
 function App() {
+  const companies = useSelector((state) => state.companies);
+  const dispatch = useDispatch();
+
+  const changeValue = () => {
+    const inputValue = document.getElementsByName('input-value')[0].value;
+
+    dispatch(searchedCnpj(inputValue));
+    dispatch(companiesFound(['Siagre', 'Conexa']));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ paddingTop: '10px' }}>
+      <input type='text' name="input-value" />
+      <button onClick={changeValue}>
+        Click me!
+      </button>
+      <h1>{companies.searchedCnpj}</h1>
+      <ul>
+        {companies.companiesFound.map((company) => (
+          <li key={company}>{company}</li>
+        ))}
+      </ul>
     </div>
   );
 }
