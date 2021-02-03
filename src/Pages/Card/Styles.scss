@@ -1,0 +1,26 @@
+.carousel {
+  width: 100vw !important;
+}
+
+.rec {
+  .rec-pagination {
+    display: none;
+  }
+
+  .rec-arrow-left,
+  .rec-arrow-right {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    color: #fff;
+    margin-left: 40px;
+    font-size: 32px;
+
+    &:hover,
+    &:enabled {
+      border: none !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+}

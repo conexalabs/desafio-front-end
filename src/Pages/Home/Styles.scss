@@ -70,20 +70,28 @@ header {
   height: 61vh;
   width: 100%;
 
-  .card {
-    max-width: 18rem;
-    background: white;
-    margin: 4em;
-    border-radius: 1em;
-    padding: 2em;
-    font-size: 16px;
+  .link-card {
+    text-decoration: none;
 
-    div {
-      color: #0b938f;
-      margin-bottom: 1em;
+    .card {
+      max-width: 18rem;
+      background: white;
+      border-radius: 1em;
+      padding: 2em;
+      font-size: 16px;
 
-      p {
-        font-weight: bold;
+      div {
+        color: #0b938f;
+        margin-bottom: 1em;
+
+        p {
+          font-weight: bold;
+        }
+      }
+
+      &:hover,
+      &:active {
+        background-color: #e7e7e7;
       }
     }
   }

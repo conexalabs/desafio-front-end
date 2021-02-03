@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchCNPJ } from '../../Redux/Actions'
 import { FaBuilding } from "react-icons/fa";
-import Card from 'react-bootstrap/Card';
 import Image from '../../Assets/people_search.svg'
+import Cards from '../Card/Card'
 
 
 import './Styles.scss'
@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <div>
       <header>
-        
+
         <div className='div-titulo'>
           <FaBuilding size={48} />
 
@@ -57,26 +57,7 @@ const Home = () => {
 
         {Object.keys(resultCNPJ).length ? (
 
-          <Card className='card'>
-            <Card.Body>
-
-              <div>
-                <p>{resultCNPJ.nome}</p>
-                <span>Razão Social</span>
-              </div>
-
-              <div>
-                <p>{resultCNPJ.cnpj}</p>
-                <span>CNPJ</span>
-              </div>
-
-              <div>
-                <p> {resultCNPJ.logradouro}, {resultCNPJ.bairro}, {resultCNPJ.numero}, {resultCNPJ.uf} </p>
-                <span>Endereço</span>
-              </div>
-
-            </Card.Body>
-          </Card>
+          <Cards />
 
         ) : (
 
