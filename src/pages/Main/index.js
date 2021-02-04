@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaBuilding } from 'react-icons/fa';
-import { searchedCnpj, companiesFound } from '../../store/actions';
+import { companiesFound } from '../../store/actions';
 import jsonp from '../../jsonp';
 
 import './styles.scss';
@@ -33,7 +33,6 @@ function Main() {
     const url = `https://www.receitaws.com.br/v1/cnpj/${cnpj}`;
     
     jsonp(url, (response) => {
-      console.log(response);
       const data = response;
 
       setIsLoading(false);
@@ -56,6 +55,7 @@ function Main() {
       }
 
       dispatch(companiesFound([...prevCompanies, company]));
+      inputRef.current.value = '';
     });
   };
 
@@ -99,7 +99,32 @@ function Main() {
       <div className="row justify-content-center">
         <main>
           {companiesState.companiesFound.length > 0 ? (
-            <h3>companies found</h3>
+            <>
+              {companiesState.companiesFound.map((company) => (
+                <div className="card-container" key={company.cnpj}>
+                  <div className="card card-item">
+                    <p>
+                      <span>
+                        <strong>{company.razaoSocial}</strong>
+                      </span>
+                      <span>Razão social</span>
+                    </p>
+                    <p>
+                      <span>
+                        <strong>{company.cnpj}</strong>
+                      </span>
+                      <span>CNPJ</span>
+                    </p>
+                    <p>
+                      <span>
+                        <strong>{company.endereco}</strong>
+                      </span>
+                      <span>Endereço</span>
+                    </p>
+                  </div>      
+                </div>
+              ))}
+            </>            
           ) : (
             <div className="search-empty">
               <img className="img-search" src={SearchImg} alt="Pesquisar"/>

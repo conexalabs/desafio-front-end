@@ -79,24 +79,94 @@ main {
   }
 }
 
+// .card-container {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//   grid-gap: 12px;
+//   width: 100%;
+//   padding-left: 40px;
+//   padding-right: 40px;
+//   padding-top: 12px;
+// }
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 12px;
-  height: 90%;    
+  height: 90%;
 }
 
-.card {
-  max-width: 350px;
-  background-color: #f6f6f6;
+.card-item {
+  // display: flex;
+  width: 270px;
+  background-color: #f6f6f6;  
+  border-radius: 10px !important;
+  padding: 18px;
+  padding-bottom: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.card-item:first-child {
+  margin: 0;
+}
+.card-item:last-child {
+  margin: 0;
+}
+
+.card span {
   color: #3a8970;
   font-size: 16px;
-  border-radius: 6px;
-  padding: 4px;
+  display: block;
+}
+
+.card p {
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+.card p:first-child {
+  margin-top: 0;
+}
+
+/* ======= media query vertical =========== */
+@media (min-height: 839px) {
+  main {
+    height: 70.2vh;
+  }
+}
+
+@media (min-height: 870px) {
+  main {
+    height: 71.3vh;
+  }
+}
+
+@media (min-height: 870px) {
+  main {
+    height: 71.6vh;
+  }
+}
+
+@media (min-height: 900px) {
+  main {
+    height: 72.3vh;
+  }
+}
+
+@media (min-height: 920px) {
+  main {
+    height: 72.8vh;
+  }
+}
+
+@media (min-height: 930px) {
+  main {
+    height: 73.2vh;
+  }
 }
 
 /* ======= media query for leptops ======== */
@@ -170,5 +240,18 @@ main {
     img {
       height: 150px;
     }
+  }
+
+  main {
+    overflow-y: scroll;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .card-item {    
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
