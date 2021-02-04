@@ -1,6 +1,6 @@
 <h2 align="center">Demo on</h2>
 <p align="center">
-  <a href="https://zerik-shopcart.herokuapp.com/" target="_blank">
+  <a href="https://zerik-cpf.herokuapp.com/" target="_blank">
     <img alt="Demo on Heroku" src="https://miro.medium.com/max/3600/1*fIjRtO5P8zc3pjs0E5hYkw.png" width="320" height="150">
   </a>
 </p>
