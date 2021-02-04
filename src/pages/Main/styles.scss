@@ -1,0 +1,154 @@
+header {
+  background-color: #f6f6f6;
+  min-height: 250px;
+  height: 250px;
+  width: 100%;
+  padding-top: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+main {
+  background-image: linear-gradient(to right, #388669, #459A9E);
+  height: 70vh;
+  width: 100%;
+  font-size: 20px;
+  color: #fff;  
+}
+
+.search-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  img {
+    height: 200px;
+  }
+}
+
+#root h3 {
+  color: #3a8970;
+  font-size: 60px;
+
+  > svg {
+    margin-bottom: 14px;
+    margin-right: 14px;
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.header-search {
+  margin-top: 22px;
+}
+
+.search-form {  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;  
+}
+
+.header-search .form-control {
+  height: 64px;
+  padding-left: 20px;
+  max-width: 400px;
+  font-size: 20px;
+}
+
+.header-search .form-control:focus {
+  border: 2px solid #388669;
+  box-shadow: none;
+}
+
+.header-search .form-control::placeholder {
+  color: #8a8e8e;
+}
+
+.btn-search {
+  background-color: #388669;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 22px;
+  margin-left: 30px;
+}
+
+/* ======= media query for leptops ======== */
+@media (max-width: 1024px) {
+  #root  h3 {
+    font-size: 40px;
+
+    > svg {
+      margin-bottom: 14px;
+      margin-right: 14px;
+      height: 34px;
+      width: 34px;
+    }
+  }
+
+  .header-search {
+    margin-top: 32px;
+  }
+
+  .header-search .form-control {
+    height: 50px;    
+  }
+
+  .btn-search {
+    background-color: #388669;
+    border: none;
+    font-size: 15px;
+    padding: 0 22px;
+    max-height: 50px;
+  }
+}
+
+/* ======= media query for small devices ======== */
+@media (max-width: 425px) {
+  #root  h3 {
+    font-size: 25px;
+
+    > svg {
+      margin-bottom: 14px;
+      margin-right: 14px;
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  .header-search {
+    margin-top: 22px;
+  }
+
+  .search-form {
+    flex-direction: column;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .header-search .form-control {
+    height: 40px;
+  }
+
+  .btn-search {
+    background-color: #388669;
+    border: none;
+    font-size: 15px;
+    padding: 12px 22px;
+    max-height: 40px;
+    margin-left: 0;
+    margin-top: 16px;
+  }
+
+  .search-empty {
+    img {
+      height: 150px;
+    }
+  }
+}
