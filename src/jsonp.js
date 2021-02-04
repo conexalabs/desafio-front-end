@@ -1,4 +1,4 @@
-export default (url, callback) => {
+export default function jsonp(url, callback) {
   var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
   window[callbackName] = function(data) {
     delete window[callbackName];
@@ -10,4 +10,4 @@ export default (url, callback) => {
   script.src =
     url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
   document.body.appendChild(script);
-};
+}
