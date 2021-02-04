@@ -2,6 +2,7 @@
   "name": "conexa-app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://www.receitaws.com.br/v1",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -10,6 +11,7 @@
     "bootstrap": "4.6",
     "node-sass": "4.14.1",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
     "react-redux": "^7.2.2",

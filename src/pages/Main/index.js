@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
 import { FaBuilding } from 'react-icons/fa';
 import { searchedCnpj, companiesFound } from '../../store/actions';
+import jsonp from '../../jsonp';
 
 import './styles.scss';
 import SearchImg from '../../assets/people-search.svg';
@@ -14,27 +14,38 @@ function Main() {
   const companiesState = useSelector((state) => state.companies);
   const inputRef = useRef(null);
 
+
+
   const numericMask = (e) => {
     let { value } = e.target;
     value = value.replace(/\D/, '').replace(/(\d{14})\d+?/, '$1');
     e.target.value = value;
   }
 
-  const handleSearch = async () => {
-    try {
-      const cnpj = inputRef.current.value;
+  const handleSearch = async () => {    
+    const cnpj = inputRef.current.value;
 
-      if (cnpj.length < 14) {
-        alert('Valor inválido. O CNPJ deve conter 14 caratéres');
-      }
+    if (cnpj.length < 14) {
+      alert('Valor inválido. O CNPJ deve conter 14 caratéres');
+    }
 
-      setIsLoading(true);
-      const url = `https://www.receitaws.com.br/v1/cnpj/${cnpj}`;
-      const { data } = await axios.get(url);
+    setIsLoading(true);
+    const url = `https://www.receitaws.com.br/v1/cnpj/${cnpj}`;
+    
+    jsonp(url, (response) => {
+      console.log(response);
+      const data = response;
+
       setIsLoading(false);
 
-      if (data.status !== 'ERROR') {
+      if (data.status === 'ERROR') {
         alert(data.message);
+        return;
+      }
+      const prevCompanies = companiesState.companiesFound;
+
+      if (prevCompanies.some((comp) => comp.razaoSocial === data.nome)) {
+        alert('Esta empresa já foi adicionada na lista');
         return;
       }
 
@@ -44,12 +55,8 @@ function Main() {
         endereco: `${data.logradouro} ${data.municipio}`,
       }
 
-      const prevCompanies = companiesState.companiesFound;
-      dispatch(companiesFound([...prevCompanies, company]));    
-    } catch (error) {
-      setIsLoading(false);
-      alert(`Falha ao pesquisar. ${error}`);
-    }    
+      dispatch(companiesFound([...prevCompanies, company]));
+    });
   };
 
   return (

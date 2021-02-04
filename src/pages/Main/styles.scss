@@ -8,27 +8,6 @@ header {
   padding-right: 15px;
 }
 
-main {
-  background-image: linear-gradient(to right, #388669, #459A9E);
-  height: 70vh;
-  width: 100%;
-  font-size: 20px;
-  color: #fff;  
-}
-
-.search-empty {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-
-  img {
-    height: 200px;
-  }
-}
-
 #root h3 {
   color: #3a8970;
   font-size: 60px;
@@ -77,6 +56,47 @@ main {
   border-radius: 30px;
   padding: 10px 22px;
   margin-left: 30px;
+}
+
+main {
+  background-image: linear-gradient(to right, #388669, #459A9E);
+  height: 70vh;
+  width: 100%;
+  font-size: 20px;
+  color: #fff;  
+}
+
+.search-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  img {
+    height: 200px;
+  }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 12px;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 12px;
+  height: 90%;    
+}
+
+.card {
+  max-width: 350px;
+  background-color: #f6f6f6;
+  color: #3a8970;
+  font-size: 16px;
+  border-radius: 6px;
+  padding: 4px;
 }
 
 /* ======= media query for leptops ======== */
