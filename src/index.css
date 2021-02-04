@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+/* Garante que a div root tenha o tamanho da screen */
+#root{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  position: absolute;
+}
+
+a {
+  text-decoration: none;
+}
