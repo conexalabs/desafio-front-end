@@ -42,6 +42,7 @@ const Mapa = (props) => {
     if (empresaInfo !== undefined) {
       Geocode.setApiKey(_apiKey);
       Geocode.fromAddress(`${empresaInfo.bairro} ${empresaInfo.municipio}`);
+      // file deepcode ignore FunctionDeclarationInBlock: <comment the reason here>
       async function getAdress() {
         const endereco = `${empresaInfo.logradouro}+${empresaInfo.bairro}+${empresaInfo.municipio}+${empresaInfo.numero}+A&key=${_apiKey}`;
         const { data } = await apiGoogle.get(endereco);
